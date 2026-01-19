@@ -1,4 +1,6 @@
 ---
+const base = import.meta.env.BASE_URL;
+
 import BaseLayout from '../layouts/BaseLayout.astro';
 import SectionHeader from '../components/SectionHeader.astro';
 
@@ -257,10 +259,10 @@ const values = [
         I'd love to hear from you.
       </p>
       <div class="flex flex-col sm:flex-row gap-4 justify-center">
-        <a href="/contact" class="btn-primary">
+        <a href={`${base}/contact`} class="btn-primary">
           Schedule a Conversation
         </a>
-        <a href="/services" class="btn-secondary">
+        <a href={`${base}/services`} class="btn-secondary">
           Explore Services
         </a>
       </div>

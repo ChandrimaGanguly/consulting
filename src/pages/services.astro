@@ -1,4 +1,6 @@
 ---
+const base = import.meta.env.BASE_URL;
+
 import BaseLayout from '../layouts/BaseLayout.astro';
 import SectionHeader from '../components/SectionHeader.astro';
 
@@ -194,7 +196,7 @@ const engagementModels = [
               <p class="text-sm text-deep-earth/60 italic mb-6">
                 <span class="font-semibold">Ideal for:</span> {service.ideal}
               </p>
-              <a href="/contact" class="btn-tertiary">
+              <a href={`${base}/contact`} class="btn-tertiary">
                 Discuss this service
                 <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
@@ -276,7 +278,7 @@ const engagementModels = [
             Initial discovery calls are complimentary. Let's discuss your needs and explore
             whether we're a good fit to work together.
           </p>
-          <a href="/contact" class="btn-primary">
+          <a href={`${base}/contact`} class="btn-primary">
             Schedule a Discovery Call
           </a>
         </div>
@@ -359,7 +361,7 @@ const engagementModels = [
       <p class="text-xl text-deep-earth/80 mb-8">
         Let's explore how I can help your organization harness AI responsibly.
       </p>
-      <a href="/contact" class="btn-primary">
+      <a href={`${base}/contact`} class="btn-primary">
         Start the Conversation
       </a>
     </div>

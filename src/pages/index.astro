@@ -1,4 +1,6 @@
 ---
+const base = import.meta.env.BASE_URL;
+
 import BaseLayout from '../layouts/BaseLayout.astro';
 import ServiceCard from '../components/ServiceCard.astro';
 import SectionHeader from '../components/SectionHeader.astro';
@@ -82,10 +84,10 @@ const services = [
 
         <!-- CTAs -->
         <div class="flex flex-col sm:flex-row gap-4 justify-center animate-fade-in-up opacity-0 animation-delay-600">
-          <a href="/contact" class="btn-primary bg-morning-gold hover:bg-morning-gold/90 text-forest-deep">
+          <a href={`${base}/contact`} class="btn-primary bg-morning-gold hover:bg-morning-gold/90 text-forest-deep">
             Start with Intention
           </a>
-          <a href="/services" class="btn-secondary border-soft-cream text-soft-cream hover:bg-soft-cream hover:text-forest-deep">
+          <a href={`${base}/services`} class="btn-secondary border-soft-cream text-soft-cream hover:bg-soft-cream hover:text-forest-deep">
             Explore Services
           </a>
         </div>
@@ -135,7 +137,7 @@ const services = [
       </div>
 
       <div class="text-center mt-12">
-        <a href="/services" class="btn-tertiary">
+        <a href={`${base}/services`} class="btn-tertiary">
           View all services & engagement models
           <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
@@ -180,7 +182,7 @@ const services = [
               20 million GBP of value unlocked through Gen AI implementations. The organisation won the Best Responsible AI program award at DataIQ.
             </p>
           </div>
-          <a href="/case-studies" class="btn-secondary border-soft-cream text-soft-cream hover:bg-soft-cream hover:text-forest-deep">
+          <a href={`${base}/case-studies`} class="btn-secondary border-soft-cream text-soft-cream hover:bg-soft-cream hover:text-forest-deep">
             Explore All Case Studies
           </a>
         </div>
@@ -246,7 +248,7 @@ const services = [
         Let's have a conversation about your organization's AI journey.
         No pressure, just clarity.
       </p>
-      <a href="/contact" class="btn-primary">
+      <a href={`${base}/contact`} class="btn-primary">
         Schedule a Discovery Call
       </a>
     </div>

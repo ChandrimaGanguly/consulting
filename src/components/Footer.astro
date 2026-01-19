@@ -1,13 +1,14 @@
 ---
+const base = import.meta.env.BASE_URL;
 const currentYear = new Date().getFullYear();
 
 const footerLinks = {
   navigate: [
-    { href: '/about', label: 'About' },
-    { href: '/services', label: 'Services' },
-    { href: '/case-studies', label: 'Case Studies' },
-    { href: '/insights', label: 'Insights' },
-    { href: '/contact', label: 'Contact' },
+    { href: `${base}/about`, label: 'About' },
+    { href: `${base}/services`, label: 'Services' },
+    { href: `${base}/case-studies`, label: 'Case Studies' },
+    { href: `${base}/insights`, label: 'Insights' },
+    { href: `${base}/contact`, label: 'Contact' },
   ],
   connect: [
     { href: 'https://www.linkedin.com/in/chandrimaganguly/', label: 'LinkedIn', external: true },
@@ -22,7 +23,7 @@ const footerLinks = {
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
       <!-- Brand Column -->
       <div class="lg:col-span-2">
-        <a href="/" class="inline-block mb-4">
+        <a href={base} class="inline-block mb-4">
           <span class="font-heading text-2xl font-bold text-soft-cream">
             Chandrima Ganguly
           </span>
