@@ -1,0 +1,132 @@
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..900;1,9..144,300..900&family=Source+Sans+3:ital,wght@0,300..900;1,300..900&family=Caveat:wght@400..700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply font-body text-deep-earth bg-soft-cream;
+    font-size: 18px;
+    line-height: 1.7;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-heading font-semibold text-forest-deep;
+    line-height: 1.2;
+  }
+
+  h1 {
+    @apply text-4xl md:text-5xl lg:text-6xl;
+  }
+
+  h2 {
+    @apply text-3xl md:text-4xl;
+  }
+
+  h3 {
+    @apply text-2xl md:text-3xl;
+  }
+
+  a {
+    @apply text-forest-deep hover:text-sage transition-colors duration-300;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply inline-flex items-center justify-center px-8 py-4
+           bg-forest-deep text-soft-cream font-semibold
+           rounded-lg hover:bg-sage transition-all duration-300
+           shadow-lg hover:shadow-xl transform hover:-translate-y-0.5;
+  }
+
+  .btn-secondary {
+    @apply inline-flex items-center justify-center px-8 py-4
+           border-2 border-forest-deep text-forest-deep font-semibold
+           rounded-lg hover:bg-forest-deep hover:text-soft-cream
+           transition-all duration-300;
+  }
+
+  .btn-tertiary {
+    @apply inline-flex items-center gap-2 text-forest-deep font-semibold
+           hover:text-terracotta transition-colors duration-300;
+  }
+
+  .card {
+    @apply bg-white rounded-2xl shadow-lg p-8
+           border border-warm-stone/50
+           hover:shadow-xl transition-shadow duration-300;
+  }
+
+  .section-padding {
+    @apply py-20 md:py-28 px-6 md:px-8;
+  }
+
+  .container-narrow {
+    @apply max-w-4xl mx-auto;
+  }
+
+  .container-wide {
+    @apply max-w-7xl mx-auto;
+  }
+
+  .text-gradient {
+    @apply bg-gradient-to-r from-forest-deep to-sage bg-clip-text text-transparent;
+  }
+
+  .highlight {
+    @apply bg-morning-gold/20 px-1 rounded;
+  }
+
+  .quote-accent {
+    @apply font-accent text-2xl md:text-3xl text-forest-deep/80 italic;
+  }
+}
+
+/* Subtle paper texture overlay */
+.paper-texture {
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.03'/%3E%3C/svg%3E");
+}
+
+/* Smooth fade-in animation */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in-up {
+  animation: fadeInUp 0.6s ease-out forwards;
+}
+
+.animation-delay-200 {
+  animation-delay: 0.2s;
+}
+
+.animation-delay-400 {
+  animation-delay: 0.4s;
+}
+
+.animation-delay-600 {
+  animation-delay: 0.6s;
+}
+
+/* Hero image overlay */
+.hero-overlay {
+  background: linear-gradient(
+    to bottom,
+    rgba(45, 71, 57, 0.7) 0%,
+    rgba(45, 71, 57, 0.5) 50%,
+    rgba(45, 71, 57, 0.8) 100%
+  );
+}

@@ -1,0 +1,269 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import SectionHeader from '../components/SectionHeader.astro';
+
+const expertise = [
+  {
+    area: 'AI Strategy & Roadmapping',
+    description: 'Translating organizational vision into actionable AI initiatives that deliver measurable impact.',
+  },
+  {
+    area: 'AI Governance & Policy',
+    description: 'Building robust frameworks for ethical AI decision-making that scale with your organization.',
+  },
+  {
+    area: 'Regulatory Compliance',
+    description: 'Navigating EU AI Act, emerging global regulations, and industry-specific requirements.',
+  },
+  {
+    area: 'RAG & Context Engineering',
+    description: 'Designing retrieval-augmented generation systems that ground AI in organizational knowledge.',
+  },
+  {
+    area: 'Local Language Models',
+    description: 'Deploying privacy-preserving, on-premise AI solutions for sensitive applications.',
+  },
+  {
+    area: 'Technical Leadership',
+    description: 'Fractional CTO services for AI initiatives, bridging technical execution with strategic vision.',
+  },
+];
+
+const values = [
+  {
+    title: 'Innovation with Intention',
+    description: 'Technology should serve purpose, not the other way around. Every AI implementation should begin with a clear understanding of why.',
+  },
+  {
+    title: 'Sustainability First',
+    description: 'The best AI solutions are those that remain valuable over time — environmentally responsible, ethically sound, and economically viable.',
+  },
+  {
+    title: 'Collaborative Partnership',
+    description: 'I work alongside your team, not above them. The goal is to build internal capacity, not dependency.',
+  },
+  {
+    title: 'Transparent Process',
+    description: 'No black boxes in my work. Every recommendation comes with clear reasoning, and every decision point is surfaced for discussion.',
+  },
+];
+---
+
+<BaseLayout
+  title="About"
+  description="Learn about Dr. Chandrima Ganguly's approach to responsible AI consulting — helping mission-driven organizations innovate with intention."
+>
+  <!-- Hero Section -->
+  <section class="section-padding bg-gradient-to-b from-warm-stone/50 to-soft-cream">
+    <div class="container-wide mx-auto">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+        <!-- Image -->
+        <div class="order-2 lg:order-1">
+          <div class="relative">
+            <div class="aspect-[4/5] rounded-2xl overflow-hidden shadow-2xl">
+              <img
+                src="/images/professional_photo.jpg"
+                alt="Dr. Chandrima Ganguly"
+                class="w-full h-full object-cover"
+              />
+            </div>
+            <!-- Decorative elements -->
+            <div class="absolute -bottom-6 -right-6 w-32 h-32 bg-sage/20 rounded-2xl -z-10"></div>
+            <div class="absolute -top-6 -left-6 w-24 h-24 bg-morning-gold/20 rounded-2xl -z-10"></div>
+          </div>
+        </div>
+
+        <!-- Content -->
+        <div class="order-1 lg:order-2">
+          <p class="text-terracotta text-sm tracking-widest uppercase mb-4">About</p>
+          <h1 class="mb-6">The Journey to Intentional AI</h1>
+          <p class="text-xl text-deep-earth/80 leading-relaxed mb-6">
+            I'm Chandrima Ganguly — researcher, strategist, and advocate for AI that serves
+            humanity's best interests.
+          </p>
+          <p class="text-deep-earth/70 leading-relaxed">
+            With a Ph.D. and years of experience at the intersection of artificial intelligence,
+            ethics, and organizational transformation, I've dedicated my career to a single question:
+            <span class="font-semibold text-forest-deep">How do we harness AI's transformative
+            power while staying true to our values?</span>
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Story Section -->
+  <section class="section-padding">
+    <div class="container-narrow mx-auto">
+      <div class="prose prose-lg max-w-none">
+        <h2 class="text-center mb-12">My Story</h2>
+
+        <p class="text-lg text-deep-earth/80 leading-relaxed mb-6">
+          My path to responsible AI consulting wasn't linear — and I believe that's what makes
+          my perspective valuable. I've seen AI from multiple angles: as a researcher pushing
+          the boundaries of what's possible, as a practitioner implementing systems in the real
+          world, and as an advisor helping organizations navigate the complex ethical terrain
+          that surrounds every AI decision.
+        </p>
+
+        <p class="text-lg text-deep-earth/80 leading-relaxed mb-6">
+          Through this journey, I've witnessed both the tremendous potential of AI and the very
+          real harm that can come from thoughtless implementation. I've seen startups move fast
+          and break things — including trust. I've seen social enterprises struggle to adopt AI
+          because the tools weren't designed with their constraints in mind. And I've seen
+          government bodies paralyzed by the complexity of AI governance, unsure how to move
+          forward responsibly.
+        </p>
+
+        <p class="text-lg text-deep-earth/80 leading-relaxed mb-6">
+          These experiences shaped my approach. I don't believe we have to choose between
+          innovation and responsibility. <span class="highlight">The best AI innovations are
+          the intentional ones</span> — those that begin with a clear understanding of purpose,
+          proceed with appropriate safeguards, and continuously evolve based on real-world impact.
+        </p>
+
+        <p class="text-lg text-deep-earth/80 leading-relaxed">
+          Today, I work primarily with startups, social enterprises, NGOs, and government bodies
+          — organizations that are driven by mission, not just metrics. These are the organizations
+          that have the most to gain from AI done right, and the most to lose from AI done wrong.
+          Helping them navigate this landscape with confidence and clarity is what drives my work.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Philosophy Section -->
+  <section class="section-padding bg-forest-deep text-soft-cream relative overflow-hidden">
+    <!-- Background image -->
+    <div class="absolute inset-0 opacity-10">
+      <div class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1441974231531-c6227db76b6e?auto=format&fit=crop&w=2000&q=80')] bg-cover bg-center"></div>
+    </div>
+
+    <div class="container-wide mx-auto relative z-10">
+      <SectionHeader
+        label="Philosophy"
+        title="What I Believe"
+        subtitle="The principles that guide every engagement"
+        light={true}
+      />
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mt-16">
+        {values.map((value) => (
+          <div class="bg-soft-cream/5 backdrop-blur-sm border border-soft-cream/10 rounded-2xl p-8">
+            <h3 class="text-xl font-heading font-semibold text-morning-gold mb-4">
+              {value.title}
+            </h3>
+            <p class="text-soft-cream/80 leading-relaxed">
+              {value.description}
+            </p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Expertise Section -->
+  <section class="section-padding">
+    <div class="container-wide mx-auto">
+      <SectionHeader
+        label="Expertise"
+        title="What I Bring"
+        subtitle="Deep knowledge across the AI lifecycle, from strategy to implementation"
+      />
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-16">
+        {expertise.map((item) => (
+          <div class="p-6 border border-warm-stone rounded-xl hover:border-sage/50 transition-colors">
+            <h3 class="font-heading font-semibold text-forest-deep mb-2">
+              {item.area}
+            </h3>
+            <p class="text-sm text-deep-earth/70">
+              {item.description}
+            </p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Credentials Section -->
+  <section class="section-padding bg-warm-stone/30">
+    <div class="container-narrow mx-auto">
+      <SectionHeader
+        label="Credentials"
+        title="Background"
+      />
+
+      <div class="mt-12 space-y-8">
+        <!-- Education -->
+        <div class="flex items-start gap-4">
+          <div class="w-12 h-12 bg-forest-deep/10 rounded-xl flex items-center justify-center flex-shrink-0">
+            <svg class="w-6 h-6 text-forest-deep" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 14l9-5-9-5-9 5 9 5z"/>
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z"/>
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 14l9-5-9-5-9 5 9 5zm0 0l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14zm-4 6v-7.5l4-2.222"/>
+            </svg>
+          </div>
+          <div>
+            <h3 class="font-heading font-semibold text-forest-deep">Ph.D.</h3>
+            <p class="text-deep-earth/70">
+              Doctoral research focused on the intersection of AI, ethics, and societal impact.
+            </p>
+          </div>
+        </div>
+
+        <!-- Experience -->
+        <div class="flex items-start gap-4">
+          <div class="w-12 h-12 bg-forest-deep/10 rounded-xl flex items-center justify-center flex-shrink-0">
+            <svg class="w-6 h-6 text-forest-deep" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+            </svg>
+          </div>
+          <div>
+            <h3 class="font-heading font-semibold text-forest-deep">Industry Experience</h3>
+            <p class="text-deep-earth/70">
+              Hands-on experience implementing AI solutions across startups, enterprises, and
+              public sector organizations, with deep expertise in responsible AI tooling,
+              governance frameworks, and technical leadership.
+            </p>
+          </div>
+        </div>
+
+        <!-- Newsletter -->
+        <div class="flex items-start gap-4">
+          <div class="w-12 h-12 bg-forest-deep/10 rounded-xl flex items-center justify-center flex-shrink-0">
+            <svg class="w-6 h-6 text-forest-deep" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9a2 2 0 00-2-2h-2m-4-3H9M7 16h6M7 8h6v4H7V8z"/>
+            </svg>
+          </div>
+          <div>
+            <h3 class="font-heading font-semibold text-forest-deep">Writing & Thought Leadership</h3>
+            <p class="text-deep-earth/70">
+              Author of "When is AI responsible?" on Substack — exploring how we can build
+              a more safe, responsible, and democratic socio-technical future with AI.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="section-padding">
+    <div class="container-narrow mx-auto text-center">
+      <h2 class="mb-6">Let's Work Together</h2>
+      <p class="text-xl text-deep-earth/80 mb-8">
+        If you're building something meaningful and want AI that serves your mission,
+        I'd love to hear from you.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a href="/contact" class="btn-primary">
+          Schedule a Conversation
+        </a>
+        <a href="/services" class="btn-secondary">
+          Explore Services
+        </a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

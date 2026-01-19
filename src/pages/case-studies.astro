@@ -1,0 +1,328 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import SectionHeader from '../components/SectionHeader.astro';
+
+const caseStudies = [
+  {
+    id: 'financial-services',
+    title: 'Gen AI Guardrails for one of the largest banks in the UK',
+    sector: 'Financial Services',
+    service: 'AI Governance, RAG & Context Engineering',
+    image: 'https://images.unsplash.com/photo-1541354329998-f4d9a9f9297f?w=800&auto=format&fit=crop&q=80',
+    teaser: 'Building an Gen AI Assurance framework and an award winning Gen AI Guardrails toolkit for one of the largest banks in the UK.',
+    challenge: 'A bank in the UK undertook an ambitious digital transformation program by implementing a Gen AI strategy and tooling - but needed an AI Assurance framework and Gen AI Guardrails to ensure that all AI applications remained accurate, unbiased and regulation compliant.',
+    approach: 'Focusing on the big picture AI Assurance framework, while ensuring that all framework artefacts were objective, quantifiable and verifiable. Prioritising upskilling of all staff user roles including non technical roles to allow interpretation and use of Gen AI based applications and their guardrails to be standardised.',
+    solution: 'Built out the AI Assurance framework by grouping AI implementations planned in the organisation by use case context and Gen AI technology used. Implemented a central Gen AI Guardrails service that can be used out of the box by all developers. Allowed inner source contributions to facilitate technical users to provide feedback and dynamic user testing. Upskilled technical users through workshops and seminars on using the toolkit, and non-technical roles on interpreting the AI Assurance framework as well as the objective metric artefacts from it.',
+    impact: '20 million GBP of value unlocked through Gen AI implementations. The organisation won the Best Responsible AI program award at DataIQ.',
+  },
+  {
+    id: 'ngo-strategy',
+    title: 'AI Strategy for Social Impact',
+    sector: 'Non-Profit',
+    service: 'Strategy & Roadmapping',
+    image: 'https://images.unsplash.com/photo-1573165349168-b66c8bc087fc?q=80&w=1169&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+    teaser: 'Setting up the AI Research Program for a UK based NGO to help it directly leverage AI to achieve its mission of diversity and inclusion in Tech',
+    challenge: 'A UK based NGO wanted to use AI tooling to improve diversity in the field of Tech but needed clear technical direction in the viability of using AI as a tool itself.',
+    approach: 'Setting up a research program to directly allow people from marginalised communities to adopt a participatory approach to evaluating open source Gen AI, hence learning by doing.',
+    solution: 'A participatory evaluation framework and database that tests how performant open source Gen AI models and ChatGPT are to crowd-sourced use cases and everyday tasks.',
+    impact: 'The program was funded within the first year of its running. A research paper resulted and led on to a further Inclusive AI in Education initiative, firmly embedding AI in the operations of the NGO.',
+  },
+  {
+    id: 'public-sector-compliance',
+    title: 'EU AI Act Readiness',
+    sector: 'Public Sector',
+    service: 'Regulatory Compliance',
+    image: 'https://images.unsplash.com/photo-1555421689-d68471e189f2?w=800&auto=format&fit=crop&q=80',
+    teaser: 'Preparing a EU Parliamentary organisation to design standardisations for regulatory sandboxes to demonstrate EU AI Act compliance.',
+    challenge: 'An EU Parliamentary organisation needed to design a regulatory sandbox for AI applications that would fall under the jurisdiction of the EU AI Act.',
+    approach: 'Focusing on re-usable metrics, automated AI observability and monitoring, allowing human in the loop when necessary.',
+    solution: 'Building out a general AI observability and monitoring set of requirements as well as standard fairness and explainability metric reporting, tiered by the risk levels as decided by the EU AI Act classifications.',
+    impact: 'Regulatory Sandbox design integrated into the consultation results.',
+  },
+  {
+    id: 'automated-monitoring',
+    title: 'Automated monitoring for deployed AI systems',
+    sector: 'All',
+    service: 'Responsible AI Implementation',
+    image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&auto=format&fit=crop&q=80',
+    teaser: 'Discovery and implementation of an automated fairness monitoring system that can detect changes in marginalised groups for public sector AI applications.',
+    challenge: 'A notable technology company that services the public sector in the UK was concerned that AI applications continue to discriminate against changing marginalised groups.',
+    approach: 'Take inspiration from a different field of AI and deep learning, re-formulate the current problem in that context to invent an innovative new automated monitoring protocol.',
+    solution: 'Use methods from the field of semi-supervised learning and apply it to AI safety to automatically track changes in social positions of groups assigned marginalised during AI application development.',
+    impact: 'Method implemented in the technology strategy of the public services technology team for further incorporation.',
+  },
+];
+
+const sectors = ['All', 'Financial Services', 'Non-Profit', 'Public Sector', 'Healthcare'];
+---
+
+<BaseLayout
+  title="Case Studies"
+  description="Explore how Dr. Chandrima Ganguly has helped mission-driven organizations implement responsible AI — from governance frameworks to technical solutions."
+>
+  <!-- Hero Section -->
+  <section class="section-padding bg-gradient-to-b from-warm-stone/50 to-soft-cream">
+    <div class="container-wide mx-auto">
+      <div class="max-w-3xl">
+        <p class="text-terracotta text-sm tracking-widest uppercase mb-4">Case Studies</p>
+        <h1 class="mb-6">Intentional Innovation in Action</h1>
+        <p class="text-xl text-deep-earth/80 leading-relaxed">
+          Real stories of mission-driven organizations implementing AI responsibly —
+          navigating complexity while staying true to their values.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Filter (visual only for now) -->
+  <section class="py-8 border-b border-warm-stone">
+    <div class="container-wide mx-auto px-6 md:px-8">
+      <div class="flex flex-wrap gap-3 justify-center">
+        {sectors.map((sector, index) => (
+          <button
+            class={`px-4 py-2 rounded-full text-sm font-medium transition-colors ${
+              index === 0
+                ? 'bg-forest-deep text-soft-cream'
+                : 'bg-warm-stone/50 text-deep-earth hover:bg-sage/20'
+            }`}
+          >
+            {sector}
+          </button>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Case Studies Grid -->
+  <section class="section-padding">
+    <div class="container-wide mx-auto">
+      <p class="text-center text-deep-earth/60 mb-8 text-sm">Click on any card to see the full details</p>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        {caseStudies.map((study, index) => (
+          <div class="flip-card h-[700px]" data-card-id={index}>
+            <div class="flip-card-inner">
+              <!-- Front of card -->
+              <article class="flip-card-front card cursor-pointer px-5 pt-5 pb-[0.2px] flex flex-col">
+                <!-- Case study image -->
+                <div class="rounded-xl mb-4 overflow-hidden flex-shrink-0" style="height: 300px;">
+                  <img
+                    src={study.image}
+                    alt={study.title}
+                    class="w-full h-full object-cover"
+                  />
+                </div>
+
+                <!-- Tags -->
+                <div class="flex flex-wrap gap-2 mb-3 flex-shrink-0">
+                  <span class="text-sm bg-sage/20 text-forest-deep px-3 py-1 rounded-full">
+                    {study.sector}
+                  </span>
+                  <span class="text-sm bg-terracotta/20 text-terracotta px-3 py-1 rounded-full">
+                    {study.service}
+                  </span>
+                </div>
+
+                <!-- Content -->
+                <h2 class="text-xl font-heading font-semibold text-forest-deep mb-3 leading-tight flex-shrink-0">
+                  {study.title}
+                </h2>
+                <p class="text-deep-earth/70 mb-3 text-base leading-snug flex-shrink-0">
+                  {study.teaser}
+                </p>
+
+                <!-- Challenge preview -->
+                <div class="pt-3 border-t border-warm-stone flex-1 overflow-hidden pb-6">
+                  <p class="text-base text-deep-earth/60 leading-snug line-clamp-4">
+                    <span class="font-semibold text-forest-deep">The Challenge:</span> {study.challenge}
+                  </p>
+                </div>
+
+                <!-- Click hint -->
+                <div class="absolute bottom-[0.2px] right-5 text-sage/60 text-sm flex items-center gap-1">
+                  <span>Click for details</span>
+                  <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+                  </svg>
+                </div>
+              </article>
+
+              <!-- Back of card -->
+              <article class="flip-card-back card cursor-pointer bg-forest-deep text-soft-cream overflow-hidden px-5 pt-5 pb-[0.2px]">
+                <div class="h-full flex flex-col">
+                  <!-- Header -->
+                  <div class="mb-4 flex-shrink-0">
+                    <h2 class="text-xl font-heading font-semibold text-soft-cream mb-3 leading-tight">
+                      {study.title}
+                    </h2>
+                    <div class="flex flex-wrap gap-2">
+                      <span class="text-sm bg-sage/30 text-soft-cream px-3 py-1 rounded-full">
+                        {study.sector}
+                      </span>
+                    </div>
+                  </div>
+
+                  <!-- Content sections - scrollable -->
+                  <div class="flex-1 overflow-y-auto space-y-3 pr-1 custom-scrollbar min-h-0 mb-1">
+                    <div>
+                      <h3 class="text-sage text-sm tracking-wide uppercase mb-2 font-semibold">The Approach</h3>
+                      <p class="text-soft-cream/90 text-base leading-snug">{study.approach}</p>
+                    </div>
+
+                    <div>
+                      <h3 class="text-sage text-sm tracking-wide uppercase mb-2 font-semibold">The Solution</h3>
+                      <p class="text-soft-cream/90 text-base leading-snug">{study.solution}</p>
+                    </div>
+
+                    <div class="bg-soft-cream/10 rounded-lg p-3 border border-soft-cream/20">
+                      <h3 class="text-morning-gold text-sm tracking-wide uppercase mb-2 font-semibold">The Impact</h3>
+                      <p class="text-soft-cream text-base leading-snug font-medium">{study.impact}</p>
+                    </div>
+                  </div>
+
+                  <!-- Click hint -->
+                  <div class="text-sage/80 text-sm flex items-center gap-1 justify-center flex-shrink-0">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/>
+                    </svg>
+                    <span>Click to return</span>
+                  </div>
+                </div>
+              </article>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <style>
+    .flip-card {
+      perspective: 1000px;
+    }
+
+    .flip-card-inner {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      transition: transform 0.6s;
+      transform-style: preserve-3d;
+    }
+
+    .flip-card.flipped .flip-card-inner {
+      transform: rotateY(180deg);
+    }
+
+    .flip-card-front,
+    .flip-card-back {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      backface-visibility: hidden;
+      -webkit-backface-visibility: hidden;
+    }
+
+    .flip-card-back {
+      transform: rotateY(180deg);
+    }
+
+    /* Custom scrollbar for the back of cards */
+    .custom-scrollbar::-webkit-scrollbar {
+      width: 6px;
+    }
+
+    .custom-scrollbar::-webkit-scrollbar-track {
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 3px;
+    }
+
+    .custom-scrollbar::-webkit-scrollbar-thumb {
+      background: rgba(180, 203, 176, 0.5);
+      border-radius: 3px;
+    }
+
+    .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+      background: rgba(180, 203, 176, 0.7);
+    }
+  </style>
+
+  <script>
+    // Add click handlers to flip cards
+    document.addEventListener('DOMContentLoaded', () => {
+      const flipCards = document.querySelectorAll('.flip-card');
+
+      flipCards.forEach(card => {
+        card.addEventListener('click', () => {
+          card.classList.toggle('flipped');
+        });
+      });
+    });
+  </script>
+
+  <!-- Case Study Template Preview -->
+  <section class="section-padding bg-forest-deep text-soft-cream">
+    <div class="container-wide mx-auto">
+      <SectionHeader
+        label="The Format"
+        title="How I Share Case Studies"
+        subtitle="Each case study follows a narrative structure that captures the full journey"
+        light={true}
+      />
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mt-16">
+        <div class="text-center">
+          <div class="w-16 h-16 bg-terracotta/20 rounded-2xl flex items-center justify-center mx-auto mb-4">
+            <svg class="w-8 h-8 text-terracotta" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+            </svg>
+          </div>
+          <h3 class="font-heading font-semibold text-soft-cream mb-2">The Challenge</h3>
+          <p class="text-soft-cream/70 text-sm">What the organization faced and why it mattered</p>
+        </div>
+
+        <div class="text-center">
+          <div class="w-16 h-16 bg-sage/20 rounded-2xl flex items-center justify-center mx-auto mb-4">
+            <svg class="w-8 h-8 text-sage" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01"/>
+            </svg>
+          </div>
+          <h3 class="font-heading font-semibold text-soft-cream mb-2">The Approach</h3>
+          <p class="text-soft-cream/70 text-sm">How we worked together to address it</p>
+        </div>
+
+        <div class="text-center">
+          <div class="w-16 h-16 bg-morning-gold/20 rounded-2xl flex items-center justify-center mx-auto mb-4">
+            <svg class="w-8 h-8 text-morning-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/>
+            </svg>
+          </div>
+          <h3 class="font-heading font-semibold text-soft-cream mb-2">The Solution</h3>
+          <p class="text-soft-cream/70 text-sm">What we built or implemented</p>
+        </div>
+
+        <div class="text-center">
+          <div class="w-16 h-16 bg-soft-cream/10 rounded-2xl flex items-center justify-center mx-auto mb-4">
+            <svg class="w-8 h-8 text-soft-cream" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"/>
+            </svg>
+          </div>
+          <h3 class="font-heading font-semibold text-soft-cream mb-2">The Impact</h3>
+          <p class="text-soft-cream/70 text-sm">Outcomes and lessons learned</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="section-padding">
+    <div class="container-narrow mx-auto text-center">
+      <h2 class="mb-6">Let's Write Your Story</h2>
+      <p class="text-xl text-deep-earth/80 mb-8 max-w-2xl mx-auto">
+        Every case study begins with a conversation. Let's explore how intentional
+        AI could transform your organization.
+      </p>
+      <a href="/contact" class="btn-primary">
+        Start the Conversation
+      </a>
+    </div>
+  </section>
+</BaseLayout>

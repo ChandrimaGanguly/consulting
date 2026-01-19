@@ -1,0 +1,33 @@
+---
+interface Props {
+  label?: string;
+  title: string;
+  subtitle?: string;
+  centered?: boolean;
+  light?: boolean;
+}
+
+const {
+  label,
+  title,
+  subtitle,
+  centered = true,
+  light = false
+} = Astro.props;
+---
+
+<div class={`max-w-3xl ${centered ? 'mx-auto text-center' : ''}`}>
+  {label && (
+    <p class={`text-sm tracking-widest uppercase mb-4 ${light ? 'text-sage' : 'text-terracotta'}`}>
+      {label}
+    </p>
+  )}
+  <h2 class={light ? 'text-soft-cream' : 'text-forest-deep'}>
+    {title}
+  </h2>
+  {subtitle && (
+    <p class={`mt-4 text-lg ${light ? 'text-soft-cream/80' : 'text-deep-earth/70'}`}>
+      {subtitle}
+    </p>
+  )}
+</div>

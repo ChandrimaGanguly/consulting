@@ -1,0 +1,367 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import SectionHeader from '../components/SectionHeader.astro';
+
+const services = [
+  {
+    id: 'strategy',
+    title: 'AI Strategy & Roadmapping',
+    tagline: 'Chart your AI journey with purpose',
+    description: `
+      Before implementing any AI solution, you need a clear vision of where you're going and why.
+      I help organizations develop comprehensive AI strategies that align technology investments
+      with mission, values, and sustainable growth.
+    `,
+    deliverables: [
+      'AI maturity assessment and gap analysis',
+      'Strategic roadmap with prioritized initiatives',
+      'Business case development for AI investments',
+      'Stakeholder alignment and change management planning',
+      'Success metrics and KPI framework',
+    ],
+    ideal: 'Organizations beginning their AI journey or looking to realign existing initiatives with strategic goals.',
+  },
+  {
+    id: 'governance',
+    title: 'AI Governance & Policy',
+    tagline: 'Build frameworks that last',
+    description: `
+      Effective AI governance isn't about slowing down innovation — it's about creating
+      the guardrails that allow you to move faster with confidence. I help organizations
+      establish ethical frameworks and decision-making structures that scale.
+    `,
+    deliverables: [
+      'AI ethics policy and principles development',
+      'Governance structure and committee formation',
+      'Risk assessment frameworks and processes',
+      'Model lifecycle management protocols',
+      'Stakeholder communication templates',
+    ],
+    ideal: 'Organizations scaling AI operations who need robust governance without bureaucratic overhead.',
+  },
+  {
+    id: 'compliance',
+    title: 'Regulatory Compliance',
+    tagline: 'Navigate EU AI Act and beyond',
+    description: `
+      The regulatory landscape for AI is evolving rapidly. From the EU AI Act to sector-specific
+      requirements, I help organizations understand their obligations and build compliance
+      into their AI operations from the ground up.
+    `,
+    deliverables: [
+      'Regulatory landscape analysis and applicability assessment',
+      'Compliance gap analysis and remediation roadmap',
+      'Documentation and record-keeping frameworks',
+      'Conformity assessment preparation',
+      'Ongoing monitoring and update protocols',
+    ],
+    ideal: 'Organizations operating in regulated industries or serving EU markets.',
+  },
+  {
+    id: 'implementation',
+    title: 'Responsible AI Implementation',
+    tagline: 'Deploy AI that reflects your values',
+    description: `
+      Moving from strategy to execution requires careful attention to fairness, transparency,
+      and accountability. I guide teams through responsible implementation practices that
+      ensure AI systems perform as intended while avoiding unintended harms.
+    `,
+    deliverables: [
+      'Bias and fairness assessment methodology',
+      'Explainability and transparency requirements',
+      'Human oversight and intervention protocols',
+      'Testing and validation frameworks',
+      'Incident response and remediation procedures',
+    ],
+    ideal: 'Teams deploying AI systems in high-stakes contexts where trust and accountability matter.',
+  },
+  {
+    id: 'rag',
+    title: 'Knowledge Architecture & AI Integration',
+    tagline: 'Build AI that understands context',
+    description: `
+      Retrieval-Augmented Generation (RAG) and context engineering are transforming how
+      organizations leverage AI. I help design and implement systems that ground AI responses
+      in your organization's knowledge, reducing hallucinations and improving relevance.
+    `,
+    deliverables: [
+      'Knowledge architecture and chunking strategy',
+      'Retrieval pipeline design and optimization',
+      'Prompt engineering and template development',
+      'Evaluation framework and quality metrics',
+      'Integration with existing systems',
+    ],
+    ideal: 'Organizations building internal AI assistants, knowledge bases, or customer-facing AI applications.',
+  },
+  {
+    id: 'local',
+    title: 'On-Premise AI Solutions',
+    tagline: 'Privacy-first, on-premise deployments',
+    description: `
+      Not every organization can or should send their data to cloud AI providers. I help
+      organizations deploy powerful local language models that keep sensitive information
+      under their control while still delivering transformative capabilities.
+    `,
+    deliverables: [
+      'On-premise model selection and benchmarking',
+      'Infrastructure requirements and architecture',
+      'Fine-tuning strategy and implementation',
+      'Security and access control framework',
+      'Performance optimization and monitoring',
+    ],
+    ideal: 'Organizations with data sensitivity requirements, air-gapped environments, or sovereignty concerns.',
+  },
+  {
+    id: 'leadership',
+    title: 'Technical Leadership & Advisory',
+    tagline: 'Fractional CTO for AI initiatives',
+    description: `
+      Sometimes you need experienced technical leadership without the commitment of a
+      full-time hire. I provide fractional CTO services for AI initiatives, bridging
+      the gap between strategic vision and technical execution.
+    `,
+    deliverables: [
+      'Technical strategy and architecture review',
+      'Team assessment and capability building',
+      'Vendor evaluation and selection guidance',
+      'Technical due diligence for investments',
+      'Board and stakeholder communication support',
+    ],
+    ideal: 'Startups and social enterprises needing senior AI technical guidance on a flexible basis.',
+  },
+];
+
+const engagementModels = [
+  {
+    title: 'Project-Based',
+    description: 'Defined scope, clear deliverables, fixed timeline. Ideal for specific initiatives like strategy development, compliance assessments, or implementation projects.',
+    icon: `<path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4"/>`,
+  },
+  {
+    title: 'Retainer',
+    description: 'Ongoing advisory relationship with dedicated hours each month. Perfect for organizations that need consistent guidance as they build and scale AI capabilities.',
+    icon: `<path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/>`,
+  },
+  {
+    title: 'Intensive Workshop',
+    description: 'Concentrated engagement over days, not months. Ideal for team training, strategy offsites, or rapid assessment needs.',
+    icon: `<path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M13 10V3L4 14h7v7l9-11h-7z"/>`,
+  },
+];
+---
+
+<BaseLayout
+  title="Services"
+  description="Explore AI consulting services from Dr. Chandrima Ganguly — from strategy and governance to RAG implementation and local AI solutions."
+>
+  <!-- Hero Section -->
+  <section class="section-padding bg-gradient-to-b from-warm-stone/50 to-soft-cream">
+    <div class="container-wide mx-auto">
+      <div class="max-w-3xl">
+        <p class="text-terracotta text-sm tracking-widest uppercase mb-4">Services</p>
+        <h1 class="mb-6">How I Can Help</h1>
+        <p class="text-xl text-deep-earth/80 leading-relaxed mb-6">
+          Every engagement begins with intention — understanding your mission, your context,
+          and your constraints before proposing solutions.
+        </p>
+        <p class="text-deep-earth/70 leading-relaxed">
+          I work primarily with startups, social enterprises, NGOs, and government bodies —
+          organizations driven by purpose who want AI that amplifies their impact without
+          compromising their values.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services List -->
+  <section class="section-padding">
+    <div class="container-wide mx-auto">
+      <div class="space-y-16">
+        {services.map((service, index) => (
+          <div
+            id={service.id}
+            class={`grid grid-cols-1 lg:grid-cols-2 gap-12 items-start ${
+              index % 2 === 1 ? 'lg:flex-row-reverse' : ''
+            }`}
+          >
+            <!-- Content -->
+            <div class={index % 2 === 1 ? 'lg:order-2' : ''}>
+              <p class="text-sage text-sm font-medium mb-2">{service.tagline}</p>
+              <h2 class="text-2xl md:text-3xl mb-4">{service.title}</h2>
+              <p class="text-deep-earth/80 leading-relaxed mb-6 whitespace-pre-line">
+                {service.description.trim()}
+              </p>
+              <p class="text-sm text-deep-earth/60 italic mb-6">
+                <span class="font-semibold">Ideal for:</span> {service.ideal}
+              </p>
+              <a href="/contact" class="btn-tertiary">
+                Discuss this service
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+                </svg>
+              </a>
+            </div>
+
+            <!-- Deliverables Card -->
+            <div class={`card bg-warm-stone/30 ${index % 2 === 1 ? 'lg:order-1' : ''}`}>
+              <h3 class="font-heading font-semibold text-forest-deep mb-4">
+                Key Deliverables
+              </h3>
+              <ul class="space-y-3">
+                {service.deliverables.map((item) => (
+                  <li class="flex items-start gap-3">
+                    <svg class="w-5 h-5 text-sage flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                    </svg>
+                    <span class="text-deep-earth/80">{item}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Engagement Models -->
+  <section class="section-padding bg-forest-deep text-soft-cream">
+    <div class="container-wide mx-auto">
+      <SectionHeader
+        label="Engagement Models"
+        title="How We Work Together"
+        subtitle="Flexible approaches designed to match your needs and constraints"
+        light={true}
+      />
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mt-16">
+        {engagementModels.map((model) => (
+          <div class="bg-soft-cream/5 backdrop-blur-sm border border-soft-cream/10 rounded-2xl p-8">
+            <div class="w-12 h-12 bg-morning-gold/20 rounded-xl flex items-center justify-center mb-6">
+              <svg class="w-6 h-6 text-morning-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24" set:html={model.icon}/>
+            </div>
+            <h3 class="text-xl font-heading font-semibold text-soft-cream mb-4">
+              {model.title}
+            </h3>
+            <p class="text-soft-cream/70 leading-relaxed">
+              {model.description}
+            </p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Pricing Section -->
+  <section class="section-padding">
+    <div class="container-narrow mx-auto text-center">
+      <SectionHeader
+        label="Investment"
+        title="Pricing"
+      />
+
+      <div class="mt-12 card bg-gradient-to-br from-warm-stone/50 to-sage/10 border-sage/30">
+        <div class="max-w-xl mx-auto">
+          <p class="text-lg text-deep-earth/80 mb-6">
+            Every organization's needs are different. I develop custom proposals based on
+            your specific context, scope, and timeline.
+          </p>
+          <div class="inline-flex items-center gap-3 bg-forest-deep/10 px-6 py-3 rounded-full mb-8">
+            <svg class="w-5 h-5 text-forest-deep" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/>
+            </svg>
+            <span class="font-semibold text-forest-deep">Contact for Quote</span>
+          </div>
+          <p class="text-deep-earth/60 text-sm mb-8">
+            Initial discovery calls are complimentary. Let's discuss your needs and explore
+            whether we're a good fit to work together.
+          </p>
+          <a href="/contact" class="btn-primary">
+            Schedule a Discovery Call
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ Section -->
+  <section class="section-padding bg-warm-stone/30">
+    <div class="container-narrow mx-auto">
+      <SectionHeader
+        label="Questions"
+        title="Frequently Asked"
+      />
+
+      <div class="mt-12 space-y-6">
+        <details class="group bg-white rounded-xl p-6 cursor-pointer">
+          <summary class="flex items-center justify-between font-heading font-semibold text-forest-deep">
+            What industries do you work with?
+            <svg class="w-5 h-5 text-sage group-open:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+            </svg>
+          </summary>
+          <p class="mt-4 text-deep-earth/70 leading-relaxed">
+            I work across sectors, with particular experience in climate tech, healthcare,
+            education, civic technology, and social impact organizations. The common thread
+            is mission-driven work where responsible AI implementation matters.
+          </p>
+        </details>
+
+        <details class="group bg-white rounded-xl p-6 cursor-pointer">
+          <summary class="flex items-center justify-between font-heading font-semibold text-forest-deep">
+            Do you work with early-stage startups?
+            <svg class="w-5 h-5 text-sage group-open:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+            </svg>
+          </summary>
+          <p class="mt-4 text-deep-earth/70 leading-relaxed">
+            Yes. I believe getting AI foundations right from the start is far easier than
+            retrofitting responsible practices later. I offer engagement models designed
+            for the resource constraints of early-stage organizations.
+          </p>
+        </details>
+
+        <details class="group bg-white rounded-xl p-6 cursor-pointer">
+          <summary class="flex items-center justify-between font-heading font-semibold text-forest-deep">
+            Can you help with technical implementation?
+            <svg class="w-5 h-5 text-sage group-open:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+            </svg>
+          </summary>
+          <p class="mt-4 text-deep-earth/70 leading-relaxed">
+            Yes, particularly for knowledge architecture, AI integration, and on-premise deployments.
+            For larger implementation projects, I typically work alongside your engineering
+            team or can recommend trusted implementation partners.
+          </p>
+        </details>
+
+        <details class="group bg-white rounded-xl p-6 cursor-pointer">
+          <summary class="flex items-center justify-between font-heading font-semibold text-forest-deep">
+            What's your typical engagement length?
+            <svg class="w-5 h-5 text-sage group-open:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+            </svg>
+          </summary>
+          <p class="mt-4 text-deep-earth/70 leading-relaxed">
+            It varies by project type. Strategy engagements typically span several weeks,
+            compliance assessments depend on system complexity, and retainer relationships
+            are ongoing. We'll define clear milestones and expectations upfront.
+          </p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="section-padding">
+    <div class="container-narrow mx-auto text-center">
+      <h2 class="mb-6">Ready to Innovate with Intention?</h2>
+      <p class="text-xl text-deep-earth/80 mb-8">
+        Let's explore how I can help your organization harness AI responsibly.
+      </p>
+      <a href="/contact" class="btn-primary">
+        Start the Conversation
+      </a>
+    </div>
+  </section>
+</BaseLayout>
