@@ -1,0 +1,223 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import SectionHeader from '../components/SectionHeader.astro';
+import AIAssessmentForm from '../components/AIAssessmentForm.jsx';
+
+const base = import.meta.env.BASE_URL;
+---
+
+<BaseLayout title="Resources" description="Tools and resources to help your organization assess AI readiness and develop an intentional AI strategy.">
+  <!-- Hero Section -->
+  <section class="section-padding bg-gradient-to-b from-warm-stone/50 to-soft-cream">
+    <div class="container-wide mx-auto">
+      <div class="max-w-3xl">
+        <p class="text-terracotta text-sm tracking-widest uppercase mb-4">Resources</p>
+        <h1 class="mb-6">Tools for Your AI Journey</h1>
+        <p class="text-xl text-deep-earth/80 leading-relaxed">
+          Explore practical tools and assessments to understand your organization's AI readiness,
+          develop strategy, and build the foundations for responsible AI implementation.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- AI Readiness Assessment Section -->
+  <section class="section-padding">
+    <div class="container-wide mx-auto">
+      <SectionHeader
+        label="Assessment Tool"
+        title="AI Readiness Assessment"
+        subtitle="Take a 5-minute assessment to understand where your organization stands on the AI maturity journey. Get personalized recommendations based on your unique context."
+      />
+
+      <div class="mt-16">
+        <AIAssessmentForm client:load />
+      </div>
+
+      <!-- After Assessment CTA -->
+      <div class="mt-20 max-w-3xl mx-auto">
+        <div class="bg-gradient-to-br from-warm-stone to-sage/20 rounded-2xl p-8 md:p-12 border border-warm-stone/50">
+          <h3 class="font-heading font-semibold text-2xl text-forest-deep mb-4">What Happens Next?</h3>
+          <div class="space-y-4 text-deep-earth/80">
+            <p>
+              After you complete the assessment, you'll receive:
+            </p>
+            <ul class="space-y-3 ml-6">
+              <li class="flex gap-3">
+                <span class="text-sage font-bold mt-1">→</span>
+                <span><strong>Personalized Results:</strong> A detailed breakdown of your AI readiness across six critical dimensions</span>
+              </li>
+              <li class="flex gap-3">
+                <span class="text-sage font-bold mt-1">→</span>
+                <span><strong>Actionable Recommendations:</strong> Specific next steps tailored to your current maturity level</span>
+              </li>
+              <li class="flex gap-3">
+                <span class="text-sage font-bold mt-1">→</span>
+                <span><strong>Consultation Offer:</strong> An opportunity to book a focused discussion about your results</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Additional Resources Section -->
+  <section class="section-padding bg-soft-cream">
+    <div class="container-wide mx-auto">
+      <SectionHeader
+        label="More Resources"
+        title="Continue Learning"
+        subtitle="Explore additional resources to deepen your understanding of responsible AI."
+      />
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mt-16">
+        <!-- Newsletter -->
+        <a
+          href="https://chandrimaganguly.substack.com/s/when-is-ai-responsible"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="card group cursor-pointer hover:border-sage/50"
+        >
+          <div class="w-12 h-12 bg-terracotta/10 rounded-lg flex items-center justify-center mb-6 group-hover:bg-terracotta/20 transition-colors">
+            <svg class="w-6 h-6 text-terracotta" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+            </svg>
+          </div>
+          <p class="text-sm text-sage mb-2 font-medium">Newsletter</p>
+          <h3 class="text-xl font-heading font-semibold text-forest-deep mb-3 group-hover:text-sage transition-colors">
+            When is AI Responsible?
+          </h3>
+          <p class="text-deep-earth/70">
+            Thoughtful analysis on responsible AI development for mission-driven organizations. Subscribe to stay updated.
+          </p>
+          <div class="mt-4 text-terracotta font-semibold text-sm flex items-center gap-2">
+            Subscribe on Substack
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/>
+            </svg>
+          </div>
+        </a>
+
+        <!-- Speaking & Workshops -->
+        <div class="card group">
+          <div class="w-12 h-12 bg-sage/10 rounded-lg flex items-center justify-center mb-6 group-hover:bg-sage/20 transition-colors">
+            <svg class="w-6 h-6 text-sage" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9a2 2 0 00-2-2h-2m-4-3H9M7 16h6v4H7v-4z"/>
+            </svg>
+          </div>
+          <p class="text-sm text-sage mb-2 font-medium">Speaking</p>
+          <h3 class="text-xl font-heading font-semibold text-forest-deep mb-3">
+            Speaking Engagements
+          </h3>
+          <p class="text-deep-earth/70">
+            I speak at conferences, workshops, and organizational events about responsible AI, governance, and strategy.
+          </p>
+          <a href={`${base}/contact`} class="mt-4 text-terracotta font-semibold text-sm flex items-center gap-2 hover:text-sage transition-colors">
+            Inquire about speaking
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/>
+            </svg>
+          </a>
+        </div>
+
+        <!-- Consulting -->
+        <div class="card group">
+          <div class="w-12 h-12 bg-morning-gold/10 rounded-lg flex items-center justify-center mb-6 group-hover:bg-morning-gold/20 transition-colors">
+            <svg class="w-6 h-6 text-morning-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M13 10V3L4 14h7v7l9-11h-7z"/>
+            </svg>
+          </div>
+          <p class="text-sm text-sage mb-2 font-medium">Consulting</p>
+          <h3 class="text-xl font-heading font-semibold text-forest-deep mb-3">
+            Custom Consulting
+          </h3>
+          <p class="text-deep-earth/70">
+            Beyond assessments, I provide strategic consulting for organizations ready to deepen their AI implementation.
+          </p>
+          <a href={`${base}/services`} class="mt-4 text-terracotta font-semibold text-sm flex items-center gap-2 hover:text-sage transition-colors">
+            Explore services
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/>
+            </svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ Section -->
+  <section class="section-padding">
+    <div class="container-narrow mx-auto">
+      <SectionHeader
+        label="Questions?"
+        title="Frequently Asked"
+        subtitle="Have questions about the assessment or resources?"
+      />
+
+      <div class="space-y-6 mt-12">
+        <details class="group bg-white rounded-xl border-2 border-warm-stone p-6 hover:border-sage/50 transition-colors cursor-pointer">
+          <summary class="flex items-center justify-between font-heading font-semibold text-lg text-forest-deep">
+            How long does the assessment take?
+            <svg class="w-6 h-6 text-sage group-open:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"/>
+            </svg>
+          </summary>
+          <p class="text-deep-earth/70 mt-4">The AI Readiness Assessment takes approximately 5 minutes to complete. You'll answer 24 questions across six key dimensions of AI maturity.</p>
+        </details>
+
+        <details class="group bg-white rounded-xl border-2 border-warm-stone p-6 hover:border-sage/50 transition-colors cursor-pointer">
+          <summary class="flex items-center justify-between font-heading font-semibold text-lg text-forest-deep">
+            What happens with my data?
+            <svg class="w-6 h-6 text-sage group-open:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"/>
+            </svg>
+          </summary>
+          <p class="text-deep-earth/70 mt-4">Your responses are confidential and used only to generate your personalized assessment results. I don't share your data with third parties or use it for purposes beyond providing your results and potentially following up on your interests.</p>
+        </details>
+
+        <details class="group bg-white rounded-xl border-2 border-warm-stone p-6 hover:border-sage/50 transition-colors cursor-pointer">
+          <summary class="flex items-center justify-between font-heading font-semibold text-lg text-forest-deep">
+            What should I do after the assessment?
+            <svg class="w-6 h-6 text-sage group-open:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"/>
+            </svg>
+          </summary>
+          <p class="text-deep-earth/70 mt-4">After receiving your results, you'll have clear, actionable recommendations. Many organizations find it valuable to book a discovery call to discuss their results in context and explore which approaches align best with their mission and constraints.</p>
+        </details>
+
+        <details class="group bg-white rounded-xl border-2 border-warm-stone p-6 hover:border-sage/50 transition-colors cursor-pointer">
+          <summary class="flex items-center justify-between font-heading font-semibold text-lg text-forest-deep">
+            Can multiple people from my organization take the assessment?
+            <svg class="w-6 h-6 text-sage group-open:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"/>
+            </svg>
+          </summary>
+          <p class="text-deep-earth/70 mt-4">Absolutely! Different perspectives across your organization can be valuable. You might have multiple stakeholders take it independently, then discuss how their views align or differ. Reach out if you'd like to do this as a facilitated workshop.</p>
+        </details>
+      </div>
+
+      <div class="mt-12 text-center">
+        <p class="text-deep-earth/70 mb-6">Still have questions?</p>
+        <a href={`${base}/contact`} class="btn-primary">Get in Touch</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="section-padding bg-gradient-to-br from-warm-stone to-sage/20 relative overflow-hidden">
+    <!-- Decorative elements -->
+    <div class="absolute top-0 right-0 w-96 h-96 bg-sage/10 rounded-full blur-3xl"></div>
+    <div class="absolute bottom-0 left-0 w-64 h-64 bg-morning-gold/10 rounded-full blur-3xl"></div>
+
+    <div class="container-narrow mx-auto text-center relative z-10">
+      <h2 class="mb-6">Ready to Assess Your AI Readiness?</h2>
+      <p class="text-xl text-deep-earth/80 mb-8 max-w-2xl mx-auto">
+        Start the assessment above, or schedule a conversation to explore your unique situation.
+      </p>
+      <a href={`${base}/contact`} class="btn-primary">
+        Schedule a Discovery Call
+      </a>
+    </div>
+  </section>
+</BaseLayout>
