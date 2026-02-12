@@ -1,0 +1,165 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import SectionHeader from '../components/SectionHeader.astro';
+
+const base = import.meta.env.BASE_URL;
+
+const lectures = [
+  {
+    title: 'AI Governance and Responsible Implementation',
+    description: 'Exploring frameworks for implementing AI governance in organizations',
+    date: '2024',
+    url: 'https://www.youtube.com/watch?v=-qwS9FP8BUc',
+    platform: 'YouTube',
+  },
+  {
+    title: 'Science and the Prejudice of the West',
+    description: 'Examining Western perspectives in scientific discourse and their implications',
+    date: '2024',
+    url: 'https://iai.tv/video/science-and-the-prejudice-of-the-west-chandrima-ganguly',
+    platform: 'IAI',
+  },
+  {
+    title: 'Building Responsible AI Systems',
+    description: 'Practical approaches to developing AI with ethical considerations at the core',
+    date: '2024',
+    url: 'https://www.youtube.com/watch?v=qIYibAvKPjE',
+    platform: 'YouTube',
+  },
+  {
+    title: 'The Future of AI Governance',
+    description: 'Insights into emerging regulatory frameworks and organizational preparedness',
+    date: '2024',
+    url: 'https://www.youtube.com/watch?v=9LHpu6EIoOg',
+    platform: 'YouTube',
+  },
+  {
+    title: 'AI and Social Impact',
+    description: 'How organizations can leverage AI to create positive social change',
+    date: '2024',
+    url: 'https://www.youtube.com/watch?v=NDis21-dZSU',
+    platform: 'YouTube',
+  },
+];
+---
+
+<BaseLayout
+  title="Speaking"
+  description="Public lectures and talks by Dr. Chandrima Ganguly on AI governance, responsible implementation, and the intersection of technology with society."
+>
+  <!-- Hero Section -->
+  <section class="section-padding bg-gradient-to-b from-warm-stone/50 to-soft-cream">
+    <div class="container-wide mx-auto">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        <div>
+          <p class="text-terracotta text-sm tracking-widest uppercase mb-4">Speaking</p>
+          <h1 class="mb-6">Public Lectures & Talks</h1>
+          <p class="text-xl text-deep-earth/80 leading-relaxed mb-6">
+            Exploring the intersection of AI technology, governance, ethics, and social impact through
+            public lectures and conversations with global audiences.
+          </p>
+          <p class="text-deep-earth/70 leading-relaxed mb-8">
+            From scientific discourse to organizational implementation, these talks examine how we can
+            build and deploy AI systems that serve humanity's best interests.
+          </p>
+        </div>
+
+        <!-- Visual placeholder -->
+        <div class="relative">
+          <div class="bg-white rounded-2xl shadow-2xl p-8 transform rotate-2">
+            <div class="flex items-center gap-3 mb-6">
+              <div class="w-12 h-12 bg-gradient-to-br from-forest-deep to-sage rounded-full flex items-center justify-center">
+                <svg class="w-6 h-6 text-soft-cream" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.828 14.828a4 4 0 01-5.656 0M17.657 17.657a8 8 0 01-11.314 0m9.9-9.9a12 12 0 00-16.97 0m19.8 0a12 12 0 01-16.97 0"/>
+                </svg>
+              </div>
+              <div>
+                <p class="font-heading font-semibold text-forest-deep">Public Lectures</p>
+                <p class="text-sm text-deep-earth/60">by Chandrima Ganguly</p>
+              </div>
+            </div>
+            <div class="space-y-4">
+              <div class="h-4 bg-warm-stone rounded w-full"></div>
+              <div class="h-4 bg-warm-stone rounded w-5/6"></div>
+              <div class="h-4 bg-warm-stone rounded w-4/6"></div>
+            </div>
+          </div>
+          <div class="absolute -bottom-4 -left-4 bg-sage/20 rounded-2xl w-full h-full -z-10"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Lectures Grid -->
+  <section class="section-padding">
+    <div class="container-wide mx-auto">
+      <SectionHeader
+        label="Lectures"
+        title="Featured Talks"
+        subtitle="Watch and learn from conversations on responsible AI and technology's role in society"
+      />
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-16">
+        {lectures.map((lecture) => (
+          <a
+            href={lecture.url}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="card group hover:shadow-lg transition-all duration-300"
+          >
+            <!-- Platform badge and icon -->
+            <div class="flex items-center justify-between mb-4">
+              <span class="inline-block px-3 py-1 bg-sage/10 rounded-full text-xs font-medium text-forest-deep">
+                {lecture.platform}
+              </span>
+              <svg class="w-4 h-4 text-terracotta group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/>
+              </svg>
+            </div>
+
+            <!-- Video thumbnail placeholder -->
+            <div class="aspect-video bg-gradient-to-br from-sage/20 to-forest-deep/10 rounded-lg mb-6 flex items-center justify-center group-hover:from-sage/30 group-hover:to-forest-deep/20 transition-colors">
+              <svg class="w-12 h-12 text-forest-deep/40" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5h3V9h4v3h3l-5 5z"/>
+              </svg>
+            </div>
+
+            <!-- Date -->
+            <p class="text-sm text-sage mb-2">{lecture.date}</p>
+
+            <!-- Title -->
+            <h3 class="font-heading font-semibold text-forest-deep mb-3 group-hover:text-sage transition-colors line-clamp-2">
+              {lecture.title}
+            </h3>
+
+            <!-- Description -->
+            <p class="text-deep-earth/70 text-sm line-clamp-2">
+              {lecture.description}
+            </p>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="section-padding bg-forest-deep text-soft-cream relative overflow-hidden">
+    <!-- Background -->
+    <div class="absolute inset-0 opacity-10">
+      <div class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=2000&q=80')] bg-cover bg-center"></div>
+    </div>
+
+    <div class="container-narrow mx-auto text-center relative z-10">
+      <h2 class="text-soft-cream mb-6">Interested in Speaking?</h2>
+      <p class="text-xl text-soft-cream/80 mb-8 max-w-2xl mx-auto">
+        For speaking inquiries, workshops, or collaboration opportunities, I'd love to connect.
+      </p>
+      <a
+        href={`${base}/contact`}
+        class="btn-primary bg-morning-gold hover:bg-morning-gold/90 text-forest-deep"
+      >
+        Get in Touch
+      </a>
+    </div>
+  </section>
+</BaseLayout>
