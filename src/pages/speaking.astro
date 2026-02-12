@@ -11,6 +11,7 @@ const lectures = [
     date: '2024',
     url: 'https://www.youtube.com/watch?v=-qwS9FP8BUc',
     platform: 'YouTube',
+    thumbnail: 'https://img.youtube.com/vi/-qwS9FP8BUc/hqdefault.jpg',
   },
   {
     title: 'Science and the Prejudice of the West',
@@ -18,6 +19,7 @@ const lectures = [
     date: '2024',
     url: 'https://iai.tv/video/science-and-the-prejudice-of-the-west-chandrima-ganguly',
     platform: 'IAI',
+    thumbnail: 'https://iai.tv/assets/Uploads/HowTheWest-1920x1080-THUMBNAIL.jpg',
   },
   {
     title: 'Building Responsible AI Systems',
@@ -25,6 +27,7 @@ const lectures = [
     date: '2024',
     url: 'https://www.youtube.com/watch?v=qIYibAvKPjE',
     platform: 'YouTube',
+    thumbnail: 'https://img.youtube.com/vi/qIYibAvKPjE/hqdefault.jpg',
   },
   {
     title: 'The Future of AI Governance',
@@ -32,6 +35,7 @@ const lectures = [
     date: '2024',
     url: 'https://www.youtube.com/watch?v=9LHpu6EIoOg',
     platform: 'YouTube',
+    thumbnail: 'https://img.youtube.com/vi/9LHpu6EIoOg/hqdefault.jpg',
   },
   {
     title: 'AI and Social Impact',
@@ -39,6 +43,7 @@ const lectures = [
     date: '2024',
     url: 'https://www.youtube.com/watch?v=NDis21-dZSU',
     platform: 'YouTube',
+    thumbnail: 'https://img.youtube.com/vi/NDis21-dZSU/hqdefault.jpg',
   },
 ];
 ---
@@ -117,11 +122,19 @@ const lectures = [
               </svg>
             </div>
 
-            <!-- Video thumbnail placeholder -->
-            <div class="aspect-video bg-gradient-to-br from-sage/20 to-forest-deep/10 rounded-lg mb-6 flex items-center justify-center group-hover:from-sage/30 group-hover:to-forest-deep/20 transition-colors">
-              <svg class="w-12 h-12 text-forest-deep/40" fill="currentColor" viewBox="0 0 24 24">
-                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5h3V9h4v3h3l-5 5z"/>
-              </svg>
+            <!-- Video thumbnail -->
+            <div class="aspect-video rounded-lg mb-6 overflow-hidden relative group-hover:shadow-md transition-shadow">
+              <img
+                src={lecture.thumbnail}
+                alt={lecture.title}
+                class="w-full h-full object-cover"
+                loading="lazy"
+              />
+              <div class="absolute inset-0 bg-forest-deep/0 group-hover:bg-forest-deep/10 transition-colors flex items-center justify-center">
+                <svg class="w-12 h-12 text-white opacity-80 group-hover:opacity-100 transition-opacity" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M8 5v14l11-7z"/>
+                </svg>
+              </div>
             </div>
 
             <!-- Date -->
