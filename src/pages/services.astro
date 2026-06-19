@@ -4,211 +4,250 @@ import SectionHeader from '../components/SectionHeader.astro';
 
 const base = import.meta.env.BASE_URL;
 
-const services = [
+const primaryServices = [
   {
-    id: 'strategy',
-    title: 'AI Strategy & Roadmapping',
-    tagline: 'Chart your AI journey with purpose',
-    description: `
-      Before implementing any AI solution, you need a clear vision of where you're going and why.
-      I help organizations develop comprehensive AI strategies that align technology investments
-      with mission, values, and sustainable growth.
-    `,
+    id: 'fractional-architect',
+    title: 'Fractional AI Architect',
+    tagline: '3-month minimum, 2–3 days/week, fully remote',
+    description: `The core offering. I embed with your engineering team as a fractional AI Architect and Enablement Lead. I design and build your guardrails system, eval harnesses, and safety infrastructure — and I teach your engineers how to own and maintain it.`,
     deliverables: [
-      'AI maturity assessment and gap analysis',
-      'Strategic roadmap with prioritized initiatives',
-      'Business case development for AI investments',
-      'Stakeholder alignment and change management planning',
-      'Success metrics and KPI framework',
+      'Production-grade guardrails and safety layers for your GenAI or agentic system',
+      'Eval harnesses calibrated to your specific use case and failure modes',
+      'LLMOps setup: observability, monitoring, cost management (Langfuse / Phoenix / Helicone)',
+      'Agent architecture review: tool-calling, state management, multi-agent safety',
+      'Weekly sessions with your team: eval design, safety patterns, uncertainty quantification',
+      'Audit-ready documentation if you need it',
     ],
-    ideal: 'Organizations beginning their AI journey or looking to realign existing initiatives with strategic goals.',
+    ideal: 'You\'re shipping GenAI or agentic features and need senior AI safety capacity embedded in your team, not advising from outside.',
+    notIdeal: 'You need a full-time hire, want a strategy deck only, or aren\'t yet building with LLMs in production.',
+    rate: '£800–1,000/day | 50% upfront',
   },
   {
-    id: 'governance',
-    title: 'AI Governance & Policy',
-    tagline: 'Build frameworks that last',
-    description: `
-      Effective AI governance isn't about slowing down innovation — it's about creating
-      the guardrails that allow you to move faster with confidence. I help organizations
-      establish ethical frameworks and decision-making structures that scale.
-    `,
+    id: 'guardrails-build',
+    title: 'Guardrails Design & Build',
+    tagline: '4–6 week fixed engagement',
+    description: `You're shipping an LLM-based product and you don't have safety infrastructure yet. I design and prototype the full guardrails system tailored to your use cases — eval harnesses, output monitoring, hallucination detection, safety layers, policy documentation. You get a working system, not a recommendation.`,
     deliverables: [
-      'AI ethics policy and principles development',
-      'Governance structure and committee formation',
-      'Risk assessment frameworks and processes',
-      'Model lifecycle management protocols',
-      'Stakeholder communication templates',
+      'Full architecture design for your specific system and failure modes',
+      'Working prototype: safety layers, hallucination monitoring, output filtering',
+      'Eval harness with initial test suite (calibrated to your domain)',
+      'Prompt injection defence and adversarial eval plan',
+      'Handoff documentation so your team can maintain and extend it',
     ],
-    ideal: 'Organizations scaling AI operations who need robust governance without bureaucratic overhead.',
+    ideal: 'You have a specific GenAI product or agentic system that needs a safety layer built. You want it done in 4–6 weeks, not 6 months.',
+    notIdeal: null,
+    rate: '£12,000–20,000 fixed | 50% upfront',
   },
   {
-    id: 'compliance',
-    title: 'Regulatory Compliance',
-    tagline: 'Navigate EU AI Act and beyond',
-    description: `
-      The regulatory landscape for AI is evolving rapidly. From the EU AI Act to sector-specific
-      requirements, I help organizations understand their obligations and build compliance
-      into their AI operations from the ground up.
-    `,
+    id: 'enablement-sprint',
+    title: 'AI Enablement Sprint',
+    tagline: '1–5 days, on-site or remote',
+    description: `Your dev team is building with LLMs but no one has deep experience with evals, safety, or production reliability. I run an intensive sprint: we build something real together, and your team walks away knowing how to do it themselves.`,
     deliverables: [
-      'Regulatory landscape analysis and applicability assessment',
-      'Compliance gap analysis and remediation roadmap',
-      'Documentation and record-keeping frameworks',
-      'Conformity assessment preparation',
-      'Ongoing monitoring and update protocols',
+      'Hands-on session with your engineers (not slides — we build)',
+      'Working eval harness or safety prototype built during the sprint',
+      'Frameworks for thinking about uncertainty, failure modes, and monitoring in LLM systems',
+      'Resources and patterns your team can apply immediately',
     ],
-    ideal: 'Organizations operating in regulated industries or serving EU markets.',
+    ideal: 'You want to upskill your team fast and have a specific system to work on. Most effective when followed by ongoing fractional support.',
+    notIdeal: null,
+    rate: '£3,500–5,000/day',
   },
   {
-    id: 'implementation',
-    title: 'Responsible AI Implementation',
-    tagline: 'Deploy AI that reflects your values',
-    description: `
-      Moving from strategy to execution requires careful attention to fairness, transparency,
-      and accountability. I guide teams through responsible implementation practices that
-      ensure AI systems perform as intended while avoiding unintended harms.
-    `,
+    id: 'agentic-architecture',
+    title: 'Agentic Systems Architecture',
+    tagline: 'Project-based or ongoing',
+    description: `You're building multi-agent systems and the complexity is getting hard to manage safely. I design the architecture — multi-agent orchestration, tool-calling, state management, memory, feedback loops — with observability and safety built in from the start.`,
     deliverables: [
-      'Bias and fairness assessment methodology',
-      'Explainability and transparency requirements',
-      'Human oversight and intervention protocols',
-      'Testing and validation frameworks',
-      'Incident response and remediation procedures',
+      'Full agentic system architecture with safety at each layer',
+      'Prompt injection defence, tool-call safety, output validation',
+      'Multi-agent orchestration pattern recommendation (LangGraph, LangChain, CrewAI)',
+      'Eval design for multi-agent workflows (notoriously hard to evaluate well)',
+      'Observability and monitoring integration',
     ],
-    ideal: 'Teams deploying AI systems in high-stakes contexts where trust and accountability matter.',
-  },
-  {
-    id: 'rag',
-    title: 'Knowledge Architecture & AI Integration',
-    tagline: 'Build AI that understands context',
-    description: `
-      Retrieval-Augmented Generation (RAG) and context engineering are transforming how
-      organizations leverage AI. I help design and implement systems that ground AI responses
-      in your organization's knowledge, reducing hallucinations and improving relevance.
-    `,
-    deliverables: [
-      'Knowledge architecture and chunking strategy',
-      'Retrieval pipeline design and optimization',
-      'Prompt engineering and template development',
-      'Evaluation framework and quality metrics',
-      'Integration with existing systems',
-    ],
-    ideal: 'Organizations building internal AI assistants, knowledge bases, or customer-facing AI applications.',
-  },
-  {
-    id: 'local',
-    title: 'On-Premise AI Solutions',
-    tagline: 'Privacy-first, on-premise deployments',
-    description: `
-      Not every organization can or should send their data to cloud AI providers. I help
-      organizations deploy powerful local language models that keep sensitive information
-      under their control while still delivering transformative capabilities.
-    `,
-    deliverables: [
-      'On-premise model selection and benchmarking',
-      'Infrastructure requirements and architecture',
-      'Fine-tuning strategy and implementation',
-      'Security and access control framework',
-      'Performance optimization and monitoring',
-    ],
-    ideal: 'Organizations with data sensitivity requirements, air-gapped environments, or sovereignty concerns.',
-  },
-  {
-    id: 'leadership',
-    title: 'Technical Leadership & Advisory',
-    tagline: 'Fractional CTO for AI initiatives',
-    description: `
-      Sometimes you need experienced technical leadership without the commitment of a
-      full-time hire. I provide fractional CTO services for AI initiatives, bridging
-      the gap between strategic vision and technical execution.
-    `,
-    deliverables: [
-      'Technical strategy and architecture review',
-      'Team assessment and capability building',
-      'Vendor evaluation and selection guidance',
-      'Technical due diligence for investments',
-      'Board and stakeholder communication support',
-    ],
-    ideal: 'Startups and social enterprises needing senior AI technical guidance on a flexible basis.',
+    ideal: 'You\'re moving from simple LLM API calls to multi-agent workflows and want to build it right the first time.',
+    notIdeal: null,
+    rate: '£1,000–1,200/day | project-based or ongoing fractional',
   },
 ];
 
-const engagementModels = [
+const secondaryServices = [
   {
-    title: 'Project-Based',
-    description: 'Defined scope, clear deliverables, fixed timeline. Ideal for specific initiatives like strategy development, compliance assessments, or implementation projects.',
-    icon: `<path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4"/>`,
+    id: 'eu-ai-act',
+    title: 'EU AI Act Readiness Assessment',
+    tagline: '3 weeks fixed',
+    description: `You have EU market exposure and your AI systems may fall under the EU AI Act. I do a practical technical assessment — not a legal one — of what your systems actually do, how they should be classified, and what you need to do to be defensible. You get a gap analysis, classification, and remediation roadmap.`,
+    deliverables: [
+      'Inventory and risk classification of all AI systems (High / Limited / Minimal risk)',
+      'Compliance gap analysis with specific, prioritised actions',
+      'Documentation templates: conformity assessment, technical file, transparency obligations',
+      'Audit-ready evidence framework',
+      'Regulatory change monitoring for 3 months post-engagement',
+    ],
+    ideal: 'You operate in the EU, have EU customers, or have a board asking hard questions about AI Act exposure.',
+    notIdeal: null,
+    rate: '£8,000–12,000 fixed',
   },
   {
-    title: 'Retainer',
-    description: 'Ongoing advisory relationship with dedicated hours each month. Perfect for organizations that need consistent guidance as they build and scale AI capabilities.',
-    icon: `<path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/>`,
+    id: 'responsible-ai-retainer',
+    title: 'Responsible AI Advisory',
+    tagline: '3-month minimum, 1 day/week',
+    description: `Ongoing strategic guidance on responsible AI, governance, and regulatory compliance for organisations that have shipped AI and need assurance as they scale. Embedded advisory — not a monthly report.`,
+    deliverables: [
+      'Weekly advisory session with your leadership or AI team',
+      'Governance decision support and incident review',
+      'Regulatory monitoring and change management',
+      'Board-ready communication on AI risk and compliance',
+    ],
+    ideal: 'You have a Head of AI or AI team already, and need a senior responsible AI voice at the table for governance decisions.',
+    notIdeal: null,
+    rate: '£4,000–6,000/month',
+  },
+];
+
+const faqs = [
+  {
+    q: 'Are you a consultant or do you actually build things?',
+    a: 'Both, but the building is primary. I don\'t write strategy decks and hand them over. I sit with your engineers and ship production artefacts. The strategic layer is real, but it\'s always in service of something that gets deployed.',
   },
   {
-    title: 'Intensive Workshop',
-    description: 'Concentrated engagement over days, not months. Ideal for team training, strategy offsites, or rapid assessment needs.',
-    icon: `<path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M13 10V3L4 14h7v7l9-11h-7z"/>`,
+    q: 'What does "fractional" mean in practice?',
+    a: '2–3 days/week (typically Tuesday–Thursday), fully remote. I\'m embedded in your team\'s workflow — Slack, standups, code reviews, design sessions — not an external advisor who shows up monthly.',
+  },
+  {
+    q: 'Do you work in our tech stack?',
+    a: 'I have experience across the major LLM APIs (Anthropic, OpenAI, Bedrock), agentic frameworks (LangGraph, LangChain, LlamaIndex), vector DBs (Qdrant, Pinecone, Weaviate), and cloud platforms (Vertex AI, AWS, GCP). If you\'re using something else, I\'ll be honest about the learning curve.',
+  },
+  {
+    q: 'Do you work with startups or only enterprises?',
+    a: 'Primarily startups and scale-ups (Series A–D). My experience at Lloyds gives me enterprise credibility, but my working style is startup-compatible. I\'m used to moving fast, context-switching, and building with limited resources.',
+  },
+  {
+    q: 'What if we\'re not ready for a full guardrails system yet?',
+    a: 'A 1-day AI Enablement Sprint is a good starting point. We work on whatever your team is actively building, and you get clarity on what a full safety infrastructure looks like for your specific system.',
+  },
+  {
+    q: 'What about EU AI Act compliance?',
+    a: 'I know the Act technically, not just legally. I understand what your systems actually need to do to be defensible — not just what the regulation says in abstract. Start with a Readiness Assessment if you\'re unsure of your exposure.',
   },
 ];
 ---
 
 <BaseLayout
   title="Services"
-  description="Explore AI consulting services from Dr. Chandrima Ganguly — from strategy and governance to RAG implementation and local AI solutions."
+  description="Fractional AI architecture, guardrails design, AI enablement sprints, and EU AI Act readiness. Built for startups and scale-ups shipping production AI."
 >
   <!-- Hero Section -->
   <section class="section-padding bg-gradient-to-b from-warm-stone/50 to-soft-cream">
     <div class="container-wide mx-auto">
       <div class="max-w-3xl">
         <p class="text-terracotta text-sm tracking-widest uppercase mb-4">Services</p>
-        <h1 class="mb-6">How I Can Help</h1>
-        <p class="text-xl text-deep-earth/80 leading-relaxed mb-6">
-          Every engagement begins with intention — understanding your mission, your context,
-          and your constraints before proposing solutions.
+        <h1 class="mb-6">What I do.</h1>
+        <p class="text-xl text-deep-earth/80 leading-relaxed mb-4">
+          I work fractionally — 2–3 days/week, fully remote — with startups and scale-ups shipping GenAI and agentic systems.
         </p>
         <p class="text-deep-earth/70 leading-relaxed">
-          I work primarily with startups, social enterprises, NGOs, and government bodies —
-          organizations driven by purpose who want AI that amplifies their impact without
-          compromising their values.
+          I build the safety and eval infrastructure. I work alongside your team. I don't write strategy decks; I ship production artefacts.
         </p>
       </div>
     </div>
   </section>
 
-  <!-- Services List -->
+  <!-- Primary Services -->
   <section class="section-padding">
     <div class="container-wide mx-auto">
-      <div class="space-y-16">
-        {services.map((service, index) => (
+      <SectionHeader
+        label="Primary Services"
+        title="What I build with you"
+      />
+
+      <div class="space-y-16 mt-16">
+        {primaryServices.map((service, index) => (
           <div
             id={service.id}
-            class={`grid grid-cols-1 lg:grid-cols-2 gap-12 items-start ${
-              index % 2 === 1 ? 'lg:flex-row-reverse' : ''
-            }`}
+            class={`grid grid-cols-1 lg:grid-cols-2 gap-12 items-start`}
           >
-            <!-- Content -->
             <div class={index % 2 === 1 ? 'lg:order-2' : ''}>
               <p class="text-sage text-sm font-medium mb-2">{service.tagline}</p>
               <h2 class="text-2xl md:text-3xl mb-4">{service.title}</h2>
-              <p class="text-deep-earth/80 leading-relaxed mb-6 whitespace-pre-line">
-                {service.description.trim()}
+              <p class="text-deep-earth/80 leading-relaxed mb-4">
+                {service.description}
               </p>
-              <p class="text-sm text-deep-earth/60 italic mb-6">
-                <span class="font-semibold">Ideal for:</span> {service.ideal}
-              </p>
+              {service.ideal && (
+                <p class="text-sm text-deep-earth/60 mb-2">
+                  <span class="font-semibold text-forest-deep">Right for you if:</span> {service.ideal}
+                </p>
+              )}
+              {service.notIdeal && (
+                <p class="text-sm text-deep-earth/60 mb-4">
+                  <span class="font-semibold text-forest-deep">Not right for you if:</span> {service.notIdeal}
+                </p>
+              )}
+              <p class="text-sm font-semibold text-forest-deep mb-6">{service.rate}</p>
               <a href={`${base}/contact`} class="btn-tertiary">
-                Discuss this service
+                Book a scoping call
                 <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
                 </svg>
               </a>
             </div>
 
-            <!-- Deliverables Card -->
             <div class={`card bg-warm-stone/30 ${index % 2 === 1 ? 'lg:order-1' : ''}`}>
-              <h3 class="font-heading font-semibold text-forest-deep mb-4">
-                Key Deliverables
-              </h3>
+              <h3 class="font-heading font-semibold text-forest-deep mb-4">What you get</h3>
+              <ul class="space-y-3">
+                {service.deliverables.map((item) => (
+                  <li class="flex items-start gap-3">
+                    <svg class="w-5 h-5 text-sage flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                    </svg>
+                    <span class="text-deep-earth/80">{item}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Secondary Services -->
+  <section class="section-padding bg-warm-stone/30">
+    <div class="container-wide mx-auto">
+      <SectionHeader
+        label="Governance & Compliance"
+        title="For regulated industries"
+        subtitle="Governance and compliance expertise as proof of rigour — for fintechs, healthtech, and organisations with EU market exposure."
+      />
+
+      <div class="space-y-16 mt-16">
+        {secondaryServices.map((service, index) => (
+          <div
+            id={service.id}
+            class={`grid grid-cols-1 lg:grid-cols-2 gap-12 items-start`}
+          >
+            <div class={index % 2 === 1 ? 'lg:order-2' : ''}>
+              <p class="text-sage text-sm font-medium mb-2">{service.tagline}</p>
+              <h2 class="text-2xl md:text-3xl mb-4">{service.title}</h2>
+              <p class="text-deep-earth/80 leading-relaxed mb-4">
+                {service.description}
+              </p>
+              {service.ideal && (
+                <p class="text-sm text-deep-earth/60 mb-4">
+                  <span class="font-semibold text-forest-deep">Right for you if:</span> {service.ideal}
+                </p>
+              )}
+              <p class="text-sm font-semibold text-forest-deep mb-6">{service.rate}</p>
+              <a href={`${base}/contact`} class="btn-tertiary">
+                Book a scoping call
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+                </svg>
+              </a>
+            </div>
+
+            <div class={`card bg-white ${index % 2 === 1 ? 'lg:order-1' : ''}`}>
+              <h3 class="font-heading font-semibold text-forest-deep mb-4">What you get</h3>
               <ul class="space-y-3">
                 {service.deliverables.map((item) => (
                   <li class="flex items-start gap-3">
@@ -230,139 +269,90 @@ const engagementModels = [
   <section class="section-padding bg-forest-deep text-soft-cream">
     <div class="container-wide mx-auto">
       <SectionHeader
-        label="Engagement Models"
-        title="How We Work Together"
-        subtitle="Flexible approaches designed to match your needs and constraints"
+        label="How it works"
+        title="How we work together"
         light={true}
       />
 
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mt-16">
-        {engagementModels.map((model) => (
-          <div class="bg-soft-cream/5 backdrop-blur-sm border border-soft-cream/10 rounded-2xl p-8">
-            <div class="w-12 h-12 bg-morning-gold/20 rounded-xl flex items-center justify-center mb-6">
-              <svg class="w-6 h-6 text-morning-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24" set:html={model.icon}/>
-            </div>
-            <h3 class="text-xl font-heading font-semibold text-soft-cream mb-4">
-              {model.title}
-            </h3>
-            <p class="text-soft-cream/70 leading-relaxed">
-              {model.description}
-            </p>
-          </div>
-        ))}
-      </div>
-    </div>
-  </section>
+      <div class="mt-16 grid grid-cols-1 md:grid-cols-2 gap-10">
+        <div class="bg-soft-cream/5 border border-soft-cream/10 rounded-2xl p-8">
+          <h3 class="text-xl font-heading font-semibold text-soft-cream mb-4">All engagements</h3>
+          <ul class="space-y-3 text-soft-cream/80">
+            <li class="flex items-start gap-3">
+              <svg class="w-5 h-5 text-morning-gold flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+              </svg>
+              <span>50% upfront, always. Standard practice for senior fractional work.</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <svg class="w-5 h-5 text-morning-gold flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+              </svg>
+              <span>Discovery call first (30 minutes, no commitment) to check fit.</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <svg class="w-5 h-5 text-morning-gold flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+              </svg>
+              <span>Fully remote by default. Quarterly UK presence available for clients who want it.</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <svg class="w-5 h-5 text-morning-gold flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+              </svg>
+              <span>No lock-in beyond the minimum engagement period stated above.</span>
+            </li>
+          </ul>
+        </div>
 
-  <!-- Pricing Section -->
-  <section class="section-padding">
-    <div class="container-narrow mx-auto text-center">
-      <SectionHeader
-        label="Investment"
-        title="Pricing"
-      />
-
-      <div class="mt-12 card bg-gradient-to-br from-warm-stone/50 to-sage/10 border-sage/30">
-        <div class="max-w-xl mx-auto">
-          <p class="text-lg text-deep-earth/80 mb-6">
-            Every organization's needs are different. I develop custom proposals based on
-            your specific context, scope, and timeline.
+        <div class="bg-soft-cream/5 border border-soft-cream/10 rounded-2xl p-8">
+          <h3 class="text-xl font-heading font-semibold text-soft-cream mb-4">Typical sequence</h3>
+          <p class="text-soft-cream/80 leading-relaxed">
+            Most clients start with an AI Enablement Sprint or a Guardrails Design engagement, discover what ongoing support looks like, then move to a fractional retainer once we've established fit.
           </p>
-          <div class="inline-flex items-center gap-3 bg-forest-deep/10 px-6 py-3 rounded-full mb-8">
-            <svg class="w-5 h-5 text-forest-deep" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/>
-            </svg>
-            <span class="font-semibold text-forest-deep">Contact for Quote</span>
-          </div>
-          <p class="text-deep-earth/60 text-sm mb-8">
-            Initial discovery calls are complimentary. Let's discuss your needs and explore
-            whether we're a good fit to work together.
+          <p class="text-soft-cream/70 leading-relaxed mt-4">
+            That's fine. Start where you need to start.
           </p>
-          <a href={`${base}/contact`} class="btn-primary">
-            Schedule a Discovery Call
-          </a>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- FAQ Section -->
+  <!-- FAQ -->
   <section class="section-padding bg-warm-stone/30">
     <div class="container-narrow mx-auto">
       <SectionHeader
         label="Questions"
-        title="Frequently Asked"
+        title="Frequently asked"
       />
 
       <div class="mt-12 space-y-6">
-        <details class="group bg-white rounded-xl p-6 cursor-pointer">
-          <summary class="flex items-center justify-between font-heading font-semibold text-forest-deep">
-            What industries do you work with?
-            <svg class="w-5 h-5 text-sage group-open:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
-            </svg>
-          </summary>
-          <p class="mt-4 text-deep-earth/70 leading-relaxed">
-            I work across sectors, with particular experience in climate tech, healthcare,
-            education, civic technology, and social impact organizations. The common thread
-            is mission-driven work where responsible AI implementation matters.
-          </p>
-        </details>
-
-        <details class="group bg-white rounded-xl p-6 cursor-pointer">
-          <summary class="flex items-center justify-between font-heading font-semibold text-forest-deep">
-            Do you work with early-stage startups?
-            <svg class="w-5 h-5 text-sage group-open:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
-            </svg>
-          </summary>
-          <p class="mt-4 text-deep-earth/70 leading-relaxed">
-            Yes. I believe getting AI foundations right from the start is far easier than
-            retrofitting responsible practices later. I offer engagement models designed
-            for the resource constraints of early-stage organizations.
-          </p>
-        </details>
-
-        <details class="group bg-white rounded-xl p-6 cursor-pointer">
-          <summary class="flex items-center justify-between font-heading font-semibold text-forest-deep">
-            Can you help with technical implementation?
-            <svg class="w-5 h-5 text-sage group-open:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
-            </svg>
-          </summary>
-          <p class="mt-4 text-deep-earth/70 leading-relaxed">
-            Yes, particularly for knowledge architecture, AI integration, and on-premise deployments.
-            For larger implementation projects, I typically work alongside your engineering
-            team or can recommend trusted implementation partners.
-          </p>
-        </details>
-
-        <details class="group bg-white rounded-xl p-6 cursor-pointer">
-          <summary class="flex items-center justify-between font-heading font-semibold text-forest-deep">
-            What's your typical engagement length?
-            <svg class="w-5 h-5 text-sage group-open:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
-            </svg>
-          </summary>
-          <p class="mt-4 text-deep-earth/70 leading-relaxed">
-            It varies by project type. Strategy engagements typically span several weeks,
-            compliance assessments depend on system complexity, and retainer relationships
-            are ongoing. We'll define clear milestones and expectations upfront.
-          </p>
-        </details>
+        {faqs.map((faq) => (
+          <details class="group bg-white rounded-xl p-6 cursor-pointer">
+            <summary class="flex items-center justify-between font-heading font-semibold text-forest-deep">
+              {faq.q}
+              <svg class="w-5 h-5 text-sage group-open:rotate-180 transition-transform flex-shrink-0 ml-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+              </svg>
+            </summary>
+            <p class="mt-4 text-deep-earth/70 leading-relaxed">
+              {faq.a}
+            </p>
+          </details>
+        ))}
       </div>
     </div>
   </section>
 
-  <!-- CTA Section -->
+  <!-- CTA -->
   <section class="section-padding">
     <div class="container-narrow mx-auto text-center">
-      <h2 class="mb-6">Ready to Innovate with Intention?</h2>
+      <h2 class="mb-6">Ready to build production AI safely?</h2>
       <p class="text-xl text-deep-earth/80 mb-8">
-        Let's explore how I can help your organization harness AI responsibly.
+        Every engagement starts with a 30-minute call. No pitch, no commitment — just clarity on whether I can help.
       </p>
       <a href={`${base}/contact`} class="btn-primary">
-        Start the Conversation
+        Book a scoping call
       </a>
     </div>
   </section>

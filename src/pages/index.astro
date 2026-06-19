@@ -1,55 +1,21 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-import ServiceCard from '../components/ServiceCard.astro';
 import SectionHeader from '../components/SectionHeader.astro';
 
 const base = import.meta.env.BASE_URL;
-
-const services = [
-  {
-    icon: 'strategy',
-    title: 'AI Strategy & Roadmapping',
-    description: 'Chart your AI journey with purpose. Align technology investments with organizational mission and sustainable growth.',
-  },
-  {
-    icon: 'governance',
-    title: 'AI Governance & Policy',
-    description: 'Build frameworks that last. Establish ethical guardrails and decision-making structures that scale with your ambitions.',
-  },
-  {
-    icon: 'compliance',
-    title: 'Regulatory Compliance',
-    description: 'Navigate EU AI Act and beyond. Stay ahead of evolving regulations while maintaining your competitive edge.',
-  },
-  {
-    icon: 'implementation',
-    title: 'Responsible Implementation',
-    description: 'Deploy AI that reflects your values. Ensure fairness, transparency, and accountability in every system.',
-  },
-  {
-    icon: 'rag',
-    title: 'Knowledge Architecture & AI Integration',
-    description: 'Build AI that understands context. Create intelligent systems grounded in your organization\'s knowledge.',
-  },
-  {
-    icon: 'local',
-    title: 'On-Premise AI Solutions',
-    description: 'Privacy-first, on-premise deployments. Leverage powerful AI while keeping sensitive data under your control.',
-  },
-];
 ---
 
-<BaseLayout title="AI Innovation with Intention">
+<BaseLayout
+  title="Ship Production AI Safely"
+  description="Fractional AI Architect & Enablement Lead. I build guardrails, eval frameworks, and agentic systems that let your team ship production AI safely. Physics PhD, ex-Lloyds Banking Group."
+>
   <!-- Hero Section -->
   <section class="relative min-h-[90vh] flex items-center justify-center overflow-hidden">
-    <!-- Background Image Placeholder -->
     <div class="absolute inset-0 bg-gradient-to-br from-forest-deep via-forest-deep/90 to-sage/80">
-      <!-- This will be replaced with actual forest/mountain image -->
       <div class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1448375240586-882707db888b?auto=format&fit=crop&w=2000&q=80')] bg-cover bg-center opacity-30"></div>
       <div class="hero-overlay absolute inset-0"></div>
     </div>
 
-    <!-- Subtle pattern overlay -->
     <div class="absolute inset-0 opacity-5">
       <svg class="w-full h-full" xmlns="http://www.w3.org/2000/svg">
         <pattern id="topo" x="0" y="0" width="100" height="100" patternUnits="userSpaceOnUse">
@@ -61,40 +27,33 @@ const services = [
 
     <div class="relative z-10 container-wide mx-auto px-6 md:px-8 text-center">
       <div class="max-w-4xl mx-auto">
-        <!-- Pre-title -->
         <p class="text-sage text-sm md:text-base tracking-widest uppercase mb-6 animate-fade-in-up opacity-0">
-          Responsible AI Consulting
+          Fractional AI Architect &amp; Enablement Lead
         </p>
 
-        <!-- Main Title -->
         <h1 class="text-soft-cream mb-6 animate-fade-in-up opacity-0 animation-delay-200">
-          Chandrima Ganguly, Ph.D.
+          Ship production AI safely.<br/>No compromises.
         </h1>
 
-        <!-- Tagline -->
-        <p class="font-heading text-2xl md:text-3xl text-morning-gold mb-8 animate-fade-in-up opacity-0 animation-delay-400">
-          AI Innovation with Intention
+        <p class="text-xl md:text-2xl text-soft-cream/90 max-w-3xl mx-auto mb-6 leading-relaxed animate-fade-in-up opacity-0 animation-delay-400">
+          I design and build guardrails, evals, and agentic systems that let your team move fast — without it falling apart in production.
         </p>
 
-        <!-- Description -->
-        <p class="text-xl md:text-2xl text-soft-cream/90 max-w-2xl mx-auto mb-12 leading-relaxed animate-fade-in-up opacity-0 animation-delay-600">
-          Helping startups, social enterprises, and public sector organizations
-          scale with AI — thoughtfully, sustainably, and in service of your mission.
+        <p class="text-base md:text-lg text-soft-cream/70 max-w-2xl mx-auto mb-12 animate-fade-in-up opacity-0 animation-delay-400">
+          Physics PhD (Cambridge). ex-Lloyds Banking Group. Fully remote, 2–3 days/week.
         </p>
 
-        <!-- CTAs -->
         <div class="flex flex-col sm:flex-row gap-4 justify-center animate-fade-in-up opacity-0 animation-delay-600">
           <a href={`${base}/contact`} class="btn-primary bg-morning-gold hover:bg-morning-gold/90 text-forest-deep">
-            Start with Intention
+            Book a 30-minute call
           </a>
-          <a href={`${base}/services`} class="btn-secondary border-soft-cream text-soft-cream hover:bg-soft-cream hover:text-forest-deep">
-            Explore Services
+          <a href={`${base}/case-studies`} class="btn-secondary border-soft-cream text-soft-cream hover:bg-soft-cream hover:text-forest-deep">
+            See what I've built
           </a>
         </div>
       </div>
     </div>
 
-    <!-- Scroll indicator -->
     <div class="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce">
       <svg class="w-6 h-6 text-soft-cream/60" fill="none" stroke="currentColor" viewBox="0 0 24 24">
         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"/>
@@ -102,43 +61,65 @@ const services = [
     </div>
   </section>
 
-  <!-- Personal Quote Section -->
-  <section class="section-padding bg-warm-stone/30">
-    <div class="container-narrow mx-auto text-center">
-      <blockquote class="relative">
-        <svg class="absolute -top-4 -left-4 w-12 h-12 text-sage/30" fill="currentColor" viewBox="0 0 24 24">
-          <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"/>
-        </svg>
-        <p class="quote-accent text-center px-8">
-          AI is powerful. But power without purpose is just noise.
-          I help mission-driven organizations harness AI in ways
-          that amplify their impact.
-        </p>
-        <footer class="mt-6 text-forest-deep font-medium">
-          — Chandrima
-        </footer>
-      </blockquote>
+  <!-- Proof Bar -->
+  <section class="bg-soft-cream border-b border-warm-stone">
+    <div class="container-wide mx-auto px-6 md:px-8 py-10">
+      <div class="grid grid-cols-2 lg:grid-cols-4 gap-8 text-center">
+        <div>
+          <p class="text-3xl font-heading font-bold text-forest-deep mb-1">£20M+</p>
+          <p class="text-sm text-deep-earth/70">Value unlocked<br/>at Lloyds Bank</p>
+        </div>
+        <div>
+          <p class="text-3xl font-heading font-bold text-forest-deep mb-1">DataIQ</p>
+          <p class="text-sm text-deep-earth/70">Best Responsible<br/>AI Program 2025</p>
+        </div>
+        <div>
+          <p class="text-3xl font-heading font-bold text-forest-deep mb-1">Ph.D.</p>
+          <p class="text-sm text-deep-earth/70">Cosmology &amp;<br/>Applied ML</p>
+        </div>
+        <div>
+          <p class="text-3xl font-heading font-bold text-forest-deep mb-1">Cambridge</p>
+          <p class="text-sm text-deep-earth/70">MASt Applied<br/>Mathematics</p>
+        </div>
+      </div>
     </div>
   </section>
 
-  <!-- Services Section -->
+  <!-- What I Build -->
   <section class="section-padding" id="services-preview">
     <div class="container-wide mx-auto">
       <SectionHeader
         label="Services"
-        title="How I Can Help"
-        subtitle="Every engagement begins with intention — understanding your mission, your context, and your constraints before proposing solutions."
+        title="What I build"
+        subtitle="Production artefacts, not strategy decks. I embed with your team, build the infrastructure, and ship it."
       />
 
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-16">
-        {services.map((service, index) => (
-          <ServiceCard {...service} delay={index * 100} />
-        ))}
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mt-16">
+        <div class="card border-l-4 border-l-sage">
+          <h3 class="text-xl font-heading font-semibold text-forest-deep mb-3">Guardrails &amp; Safety Infrastructure</h3>
+          <p class="text-deep-earth/70 leading-relaxed">
+            I design and implement the safety layer for your GenAI or agentic system — eval harnesses, output monitoring, hallucination detection, prompt injection defence. Built for production, not demos.
+          </p>
+        </div>
+
+        <div class="card border-l-4 border-l-morning-gold">
+          <h3 class="text-xl font-heading font-semibold text-forest-deep mb-3">Agentic Systems Architecture</h3>
+          <p class="text-deep-earth/70 leading-relaxed">
+            Multi-agent orchestration, tool-calling, state management, and observability — designed so your agents behave predictably in production and you can debug them when they don't.
+          </p>
+        </div>
+
+        <div class="card border-l-4 border-l-terracotta">
+          <h3 class="text-xl font-heading font-semibold text-forest-deep mb-3">AI Enablement Sprints</h3>
+          <p class="text-deep-earth/70 leading-relaxed">
+            I embed with your dev team for 2–3 days/week and teach them how to build, evaluate, and ship AI systems safely at scale. No slides. Just building.
+          </p>
+        </div>
       </div>
 
       <div class="text-center mt-12">
         <a href={`${base}/services`} class="btn-tertiary">
-          View all services & engagement models
+          See all services
           <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
           </svg>
@@ -147,45 +128,51 @@ const services = [
     </div>
   </section>
 
-  <!-- Featured Case Study -->
+  <!-- Proof, not promises -->
   <section class="section-padding bg-forest-deep text-soft-cream relative overflow-hidden">
-    <!-- Background pattern -->
-    <div class="absolute inset-0 opacity-5">
-      <div class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1519681393784-d120267933ba?auto=format&fit=crop&w=2000&q=80')] bg-cover bg-center"></div>
-    </div>
-
     <div class="container-wide mx-auto relative z-10">
-      <div class="flex flex-col lg:flex-row gap-12 items-center">
-        <!-- Case study image -->
-        <div class="lg:w-1/2">
-          <div class="aspect-video rounded-2xl overflow-hidden shadow-2xl">
-            <img
-              src="https://images.unsplash.com/photo-1541354329998-f4d9a9f9297f?w=800&auto=format&fit=crop&q=80"
-              alt="Gen AI Guardrails for Financial Services"
-              class="w-full h-full object-cover"
-            />
+      <SectionHeader
+        label="Case Studies"
+        title="Proof, not promises."
+        light={true}
+      />
+
+      <div class="mt-16 space-y-8">
+        <!-- Lead case study -->
+        <div class="bg-soft-cream/5 border border-soft-cream/10 rounded-2xl p-8 lg:p-10">
+          <div class="flex flex-col lg:flex-row gap-8 items-start">
+            <div class="flex-1">
+              <p class="text-sage text-sm tracking-widest uppercase mb-3">Financial Services · GenAI at Scale</p>
+              <h3 class="text-2xl font-heading font-semibold text-soft-cream mb-4">
+                Gen AI Guardrails at the UK's largest retail bank
+              </h3>
+              <p class="text-soft-cream/80 leading-relaxed mb-6">
+                Designed and tech-led the full Gen AI Assurance framework and Guardrails toolkit — eval harnesses, safety layers, hallucination monitoring, compliance documentation. Scaled to cover 50+ AI implementations across the organisation.
+              </p>
+              <div class="bg-soft-cream/10 rounded-lg p-5 border border-soft-cream/20">
+                <p class="text-morning-gold text-sm uppercase tracking-wide mb-2 font-semibold">Impact</p>
+                <p class="text-soft-cream font-semibold">£20M of value unlocked across GenAI implementations. DataIQ Best Responsible AI Program 2025.</p>
+              </div>
+            </div>
           </div>
         </div>
 
-        <!-- Content -->
-        <div class="lg:w-1/2">
-          <p class="text-sage text-sm tracking-widest uppercase mb-4">Featured Case Study</p>
-          <h2 class="text-soft-cream mb-6">
-            Gen AI Guardrails for one of the largest banks in the UK
-          </h2>
-          <p class="text-soft-cream/80 text-lg mb-6">
-            Building an Gen AI Assurance framework and an award winning Gen AI Guardrails toolkit for one of the largest banks in the UK.
+        <!-- Secondary case study -->
+        <div class="bg-soft-cream/5 border border-soft-cream/10 rounded-2xl p-8">
+          <p class="text-sage text-sm tracking-widest uppercase mb-3">AI Safety · High-Stakes Deployment</p>
+          <h3 class="text-xl font-heading font-semibold text-soft-cream mb-3">
+            Safety evaluation framework for Vida (herEthicalAI)
+          </h3>
+          <p class="text-soft-cream/70 leading-relaxed">
+            LLM system deployed to police forces detecting victim-blaming language and abuse patterns in court documents. Designing the core eval harness and adversarial eval tooling for a domain where false negatives have direct harm consequences for real people.
           </p>
-          <div class="bg-soft-cream/10 rounded-lg p-6 mb-8 border border-soft-cream/20">
-            <p class="text-sm text-sage uppercase tracking-wide mb-2">Impact</p>
-            <p class="text-soft-cream/90">
-              20 million GBP of value unlocked through Gen AI implementations. The organisation won the Best Responsible AI program award at DataIQ.
-            </p>
-          </div>
-          <a href={`${base}/case-studies`} class="btn-secondary border-soft-cream text-soft-cream hover:bg-soft-cream hover:text-forest-deep">
-            Explore All Case Studies
-          </a>
         </div>
+      </div>
+
+      <div class="text-center mt-10">
+        <a href={`${base}/case-studies`} class="btn-secondary border-soft-cream text-soft-cream hover:bg-soft-cream hover:text-forest-deep">
+          See all case studies
+        </a>
       </div>
     </div>
   </section>
@@ -196,25 +183,23 @@ const services = [
       <SectionHeader
         label="Insights"
         title="When is AI Responsible?"
-        subtitle="Thoughts on building a more safe, responsible, and democratic socio-technical future with AI."
+        subtitle="Thoughts on building production AI systems safely, evaluating LLMs rigorously, and what responsible AI actually means in practice."
       />
 
       <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mt-16">
-        <!-- Placeholder cards for Substack integration -->
-        {[1, 2, 3].map((i) => (
+        {[1, 2, 3].map((_i) => (
           <article class="card group cursor-pointer hover:border-sage/50">
             <div class="aspect-video bg-warm-stone rounded-lg mb-6 flex items-center justify-center">
               <svg class="w-12 h-12 text-sage/30" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9a2 2 0 00-2-2h-2m-4-3H9M7 16h6M7 8h6v4H7V8z"/>
               </svg>
             </div>
-            <p class="text-sm text-sage mb-2">Coming Soon</p>
+            <p class="text-sm text-sage mb-2">On Substack</p>
             <h3 class="text-xl font-heading font-semibold text-forest-deep mb-3 group-hover:text-sage transition-colors">
               Insights from the Newsletter
             </h3>
             <p class="text-deep-earth/70">
-              Subscribe to "When is AI responsible?" on Substack to receive thoughtful
-              analysis on responsible AI development.
+              Subscribe to "When is AI responsible?" on Substack — evals, guardrails, agentic safety, and what actually happens when safety is an afterthought.
             </p>
           </article>
         ))}
@@ -238,18 +223,16 @@ const services = [
 
   <!-- CTA Section -->
   <section class="section-padding bg-gradient-to-br from-warm-stone to-sage/20 relative overflow-hidden">
-    <!-- Decorative elements -->
     <div class="absolute top-0 right-0 w-96 h-96 bg-sage/10 rounded-full blur-3xl"></div>
     <div class="absolute bottom-0 left-0 w-64 h-64 bg-morning-gold/10 rounded-full blur-3xl"></div>
 
     <div class="container-narrow mx-auto text-center relative z-10">
-      <h2 class="mb-6">Ready to Innovate with Intention?</h2>
+      <h2 class="mb-6">Ready to ship AI safely?</h2>
       <p class="text-xl text-deep-earth/80 mb-8 max-w-2xl mx-auto">
-        Let's have a conversation about your organization's AI journey.
-        No pressure, just clarity.
+        Book a 30-minute call. I'll tell you honestly whether I can help and what it would look like.
       </p>
       <a href={`${base}/contact`} class="btn-primary">
-        Schedule a Discovery Call
+        Book a 30-minute call
       </a>
     </div>
   </section>

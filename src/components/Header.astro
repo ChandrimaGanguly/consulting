@@ -2,10 +2,9 @@
 const base = import.meta.env.BASE_URL;
 const navLinks = [
   { href: `${base}/about`, label: 'About' },
-  { href: `${base}/services`, label: 'Services' },
   { href: `${base}/case-studies`, label: 'Work' },
+  { href: `${base}/services`, label: 'Services' },
   { href: `${base}/speaking`, label: 'Speaking' },
-  { href: `${base}/resources`, label: 'Resources' },
   { href: `${base}/insights`, label: 'Insights' },
   { href: `${base}/contact`, label: 'Contact' },
 ];
@@ -41,7 +40,7 @@ const currentPath = Astro.url.pathname;
           </a>
         ))}
         <a href={`${base}/contact`} class="btn-primary text-sm py-2 px-5">
-          Start with Intention
+          Book a call
         </a>
       </div>
 
@@ -87,7 +86,7 @@ const currentPath = Astro.url.pathname;
           </a>
         ))}
         <a href={`${base}/contact`} class="btn-primary inline-block mt-4">
-          Start with Intention
+          Book a call
         </a>
       </div>
     </div>

@@ -25,18 +25,16 @@ const contactMethods = [
 
 <BaseLayout
   title="Contact"
-  description="Get in touch with Dr. Chandrima Ganguly to discuss responsible AI consulting, speaking engagements, or collaboration opportunities."
+  description="Book a 30-minute call with Chandrima Ganguly, Fractional AI Architect & Enablement Lead."
 >
   <!-- Hero Section -->
   <section class="section-padding bg-gradient-to-b from-warm-stone/50 to-soft-cream">
     <div class="container-wide mx-auto">
       <div class="max-w-3xl">
         <p class="text-terracotta text-sm tracking-widest uppercase mb-4">Contact</p>
-        <h1 class="mb-6">Let's Start with Intention</h1>
+        <h1 class="mb-6">Let's work out if we're a fit.</h1>
         <p class="text-xl text-deep-earth/80 leading-relaxed">
-          Whether you're exploring AI possibilities, navigating governance challenges,
-          or ready to implement — I'd love to hear from you. I'm available for project work,
-          consulting engagements, and collaborations.
+          Book a 30-minute call. I'll ask what you're building, you'll ask what I can do, and we'll both know by the end whether it makes sense to work together. No pitch. No commitment. Just clarity.
         </p>
       </div>
     </div>
@@ -48,9 +46,9 @@ const contactMethods = [
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-16">
         <!-- Left Column: Info + Calendar -->
         <div>
-          <h2 class="text-2xl mb-6">Schedule a Call</h2>
+          <h2 class="text-2xl mb-6">Book a call</h2>
           <p class="text-deep-earth/70 mb-8">
-            The best way to explore working together is a conversation. Choose the session type that works best for you.
+            Choose the session type that works best for you. If you're not sure, start with the 30-minute discovery call.
           </p>
 
           <!-- Booking Options -->
@@ -68,7 +66,7 @@ const contactMethods = [
                     Introduction
                   </h3>
                   <p class="text-deep-earth/70 text-sm leading-relaxed">
-                    Brief introductory call to see if we should explore working together.
+                    Brief introductory call. Tell me what you're building; I'll tell you if I can help.
                   </p>
                 </div>
                 <div class="w-12 h-12 bg-morning-gold/10 rounded-xl flex items-center justify-center ml-4 flex-shrink-0 group-hover:bg-morning-gold/20 transition-colors">
@@ -109,7 +107,7 @@ const contactMethods = [
                     Discovery
                   </h3>
                   <p class="text-deep-earth/70 text-sm leading-relaxed">
-                    Focused consultation to understand your AI challenges and outline potential approaches and next steps.
+                    We go deeper: what you're building, where the safety or eval gaps are, and what an engagement would look like.
                   </p>
                 </div>
                 <div class="w-12 h-12 bg-sage/10 rounded-xl flex items-center justify-center ml-4 flex-shrink-0 group-hover:bg-sage/20 transition-colors">
@@ -147,10 +145,10 @@ const contactMethods = [
               <div class="flex items-start justify-between mb-3">
                 <div class="flex-1">
                   <h3 class="font-heading font-semibold text-forest-deep text-lg mb-1 group-hover:text-terracotta transition-colors">
-                    Strategy
+                    Technical Deep-Dive
                   </h3>
                   <p class="text-deep-earth/70 text-sm leading-relaxed">
-                    In-depth consultation to dive deep into your AI challenges and develop actionable strategies.
+                    In-depth technical session: we look at your system architecture, eval approach, and safety gaps in detail.
                   </p>
                 </div>
                 <div class="w-12 h-12 bg-terracotta/10 rounded-xl flex items-center justify-center ml-4 flex-shrink-0 group-hover:bg-terracotta/20 transition-colors">
@@ -180,7 +178,7 @@ const contactMethods = [
           </div>
 
           <!-- Contact Methods -->
-          <h3 class="font-heading font-semibold text-forest-deep mb-4">Or reach out directly</h3>
+          <h3 class="font-heading font-semibold text-forest-deep mb-4">Other ways to reach me</h3>
           <div class="space-y-4">
             {contactMethods.map((method) => (
               <a
@@ -214,11 +212,9 @@ const contactMethods = [
 
         <!-- Right Column: Contact Form -->
         <div>
-          <h2 class="text-2xl mb-6">Send a Message</h2>
+          <h2 class="text-2xl mb-6">Send a message</h2>
           <p class="text-deep-earth/70 mb-8">
-            Prefer to write? Tell me about your organization and what you're hoping to achieve.
-            I'm available for project work and would be happy to discuss your specific needs.
-            I'll respond within 2 business days.
+            Prefer to write first? Tell me briefly what you're building and what the safety or eval challenge is. I'll respond within 2 business days.
           </p>
 
           <form
@@ -250,27 +246,40 @@ const contactMethods = [
                   name="email"
                   required
                   class="w-full px-4 py-3 rounded-lg border border-warm-stone bg-white focus:border-sage focus:ring-2 focus:ring-sage/20 outline-none transition-colors"
-                  placeholder="you@organization.com"
+                  placeholder="Best email to reach you"
                 />
               </div>
             </div>
 
             <div>
               <label for="organization" class="block text-sm font-medium text-forest-deep mb-2">
-                Organization
+                Company / project
               </label>
               <input
                 type="text"
                 id="organization"
                 name="organization"
                 class="w-full px-4 py-3 rounded-lg border border-warm-stone bg-white focus:border-sage focus:ring-2 focus:ring-sage/20 outline-none transition-colors"
-                placeholder="Your organization name"
+                placeholder="Company or project name"
+              />
+            </div>
+
+            <div>
+              <label for="role" class="block text-sm font-medium text-forest-deep mb-2">
+                Your role
+              </label>
+              <input
+                type="text"
+                id="role"
+                name="role"
+                class="w-full px-4 py-3 rounded-lg border border-warm-stone bg-white focus:border-sage focus:ring-2 focus:ring-sage/20 outline-none transition-colors"
+                placeholder="e.g. CTO, Head of AI, Founder"
               />
             </div>
 
             <div>
               <label for="interest" class="block text-sm font-medium text-forest-deep mb-2">
-                Area of Interest
+                What are you working on?
               </label>
               <select
                 id="interest"
@@ -278,13 +287,12 @@ const contactMethods = [
                 class="w-full px-4 py-3 rounded-lg border border-warm-stone bg-white focus:border-sage focus:ring-2 focus:ring-sage/20 outline-none transition-colors"
               >
                 <option value="">Select an option</option>
-                <option value="strategy">AI Strategy & Roadmapping</option>
-                <option value="governance">AI Governance & Policy</option>
-                <option value="compliance">Regulatory Compliance</option>
-                <option value="implementation">Responsible AI Implementation</option>
-                <option value="rag">Knowledge Architecture & AI Integration</option>
-                <option value="local">On-Premise AI Solutions</option>
-                <option value="leadership">Technical Leadership & Advisory</option>
+                <option value="fractional">Fractional AI Architect (ongoing)</option>
+                <option value="guardrails">Guardrails Design &amp; Build</option>
+                <option value="enablement">AI Enablement Sprint</option>
+                <option value="agentic">Agentic Systems Architecture</option>
+                <option value="eu-ai-act">EU AI Act Readiness</option>
+                <option value="advisory">Responsible AI Advisory</option>
                 <option value="speaking">Speaking Engagement</option>
                 <option value="other">Other</option>
               </select>
@@ -300,7 +308,7 @@ const contactMethods = [
                 required
                 rows="5"
                 class="w-full px-4 py-3 rounded-lg border border-warm-stone bg-white focus:border-sage focus:ring-2 focus:ring-sage/20 outline-none transition-colors resize-none"
-                placeholder="Tell me about your organization and what you're hoping to achieve..."
+                placeholder="Tell me briefly: what are you building, and what's the safety or eval challenge you're facing?"
               ></textarea>
             </div>
 
@@ -355,43 +363,38 @@ const contactMethods = [
           </summary>
           <div class="mt-4 text-deep-earth/70 leading-relaxed space-y-3">
             <p>
-              <strong class="text-forest-deep">Introduction (15 minutes):</strong> Perfect for a brief introduction or to ask a quick question about working together.
+              <strong class="text-forest-deep">Introduction (15 minutes, free):</strong> If you're not sure whether we're a fit, start here. Tell me what you're building; I'll tell you if I can help.
             </p>
             <p>
-              <strong class="text-forest-deep">Discovery (30 minutes - £100):</strong> Focused consultation to understand your AI challenges and outline potential approaches and next steps.
+              <strong class="text-forest-deep">Discovery (30 minutes — £100):</strong> We go deeper: your system architecture, where the safety or eval gaps are, and what an engagement would look like.
             </p>
             <p>
-              <strong class="text-forest-deep">Strategy (60 minutes - £200):</strong> For in-depth consultation on specific AI challenges, developing implementation strategies, or technical guidance.
+              <strong class="text-forest-deep">Technical Deep-Dive (60 minutes — £200):</strong> We look at your system in detail. Right if you want a technical assessment or want to scope a specific engagement before committing.
             </p>
           </div>
         </details>
 
         <details class="group bg-white rounded-xl p-6 cursor-pointer">
           <summary class="flex items-center justify-between font-heading font-semibold text-forest-deep">
-            How quickly do you respond to inquiries?
+            How quickly do you respond?
             <svg class="w-5 h-5 text-sage group-open:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
             </svg>
           </summary>
           <p class="mt-4 text-deep-earth/70 leading-relaxed">
-            I aim to respond to all inquiries within 2 business days. If you have an
-            urgent need, please mention it in your message and I'll do my best to
-            prioritize accordingly.
+            Within 2 business days for messages. If you have an urgent need — a production incident, an imminent regulatory deadline — mention it and I'll prioritise accordingly.
           </p>
         </details>
 
         <details class="group bg-white rounded-xl p-6 cursor-pointer">
           <summary class="flex items-center justify-between font-heading font-semibold text-forest-deep">
-            Do you work with organizations outside of startups and NGOs?
+            What stage does a company need to be at?
             <svg class="w-5 h-5 text-sage group-open:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
             </svg>
           </summary>
           <p class="mt-4 text-deep-earth/70 leading-relaxed">
-            While my primary focus is mission-driven organizations — startups, social
-            enterprises, NGOs, and government bodies — I'm open to conversations with
-            any organization committed to responsible AI. The key is alignment on values
-            and approach.
+            I work primarily with startups and scale-ups (Series A–D) that are actively building with LLMs in production or close to it. The right time to talk is when you're building something real that needs safety infrastructure — not when you're pre-product.
           </p>
         </details>
 
@@ -403,9 +406,7 @@ const contactMethods = [
             </svg>
           </summary>
           <p class="mt-4 text-deep-earth/70 leading-relaxed">
-            Yes! I speak on topics including AI governance, responsible AI implementation,
-            the EU AI Act, and building AI strategies for mission-driven organizations.
-            Select "Speaking Engagement" in the form above and tell me about your event.
+            Yes. I speak on building production AI safely, agentic architecture, evals at scale, and what actually happens when safety is an afterthought. Select "Speaking Engagement" in the form above and tell me about your event.
           </p>
         </details>
       </div>

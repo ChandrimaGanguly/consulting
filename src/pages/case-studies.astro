@@ -7,76 +7,92 @@ const base = import.meta.env.BASE_URL;
 const caseStudies = [
   {
     id: 'financial-services',
-    title: 'Gen AI Guardrails for one of the largest banks in the UK',
+    title: 'Gen AI Guardrails System',
+    org: "UK's Largest Retail Bank (Lloyds Banking Group)",
     sector: 'Financial Services',
-    service: 'AI Governance, RAG & Context Engineering',
+    service: 'Agentic Safety · GenAI at Scale',
     image: 'https://images.unsplash.com/photo-1541354329998-f4d9a9f9297f?w=800&auto=format&fit=crop&q=80',
-    teaser: 'Building an Gen AI Assurance framework and an award winning Gen AI Guardrails toolkit for one of the largest banks in the UK.',
-    challenge: 'A bank in the UK undertook an ambitious digital transformation program by implementing a Gen AI strategy and tooling - but needed an AI Assurance framework and Gen AI Guardrails to ensure that all AI applications remained accurate, unbiased and regulation compliant.',
-    approach: 'Focusing on the big picture AI Assurance framework, while ensuring that all framework artefacts were objective, quantifiable and verifiable. Prioritising upskilling of all staff user roles including non technical roles to allow interpretation and use of Gen AI based applications and their guardrails to be standardised.',
-    solution: 'Built out the AI Assurance framework by grouping AI implementations planned in the organisation by use case context and Gen AI technology used. Implemented a central Gen AI Guardrails service that can be used out of the box by all developers. Allowed inner source contributions to facilitate technical users to provide feedback and dynamic user testing. Upskilled technical users through workshops and seminars on using the toolkit, and non-technical roles on interpreting the AI Assurance framework as well as the objective metric artefacts from it.',
-    impact: '20 million GBP of value unlocked through Gen AI implementations. The organisation won the Best Responsible AI program award at DataIQ.',
+    teaser: 'Designed and tech-led the Gen AI Assurance framework and Guardrails toolkit for the UK\'s largest retail bank — covering 50+ AI implementations.',
+    challenge: 'A top-5 UK bank was rolling out a GenAI strategy across 50+ implementations but had no unified assurance framework. Each team was making different safety decisions. The board needed something auditable. The regulators needed something defensible. The developers needed something they could actually use.',
+    approach: 'Designed the full Gen AI Assurance framework by grouping AI implementations by use case context and GenAI technology used. Implemented a centralised Gen AI Guardrails service deployable out-of-box by all developers, with an inner-source contribution model so technical users could extend and improve the toolkit. Upskilled technical and non-technical roles through workshops and seminars.',
+    solution: 'Full Gen AI Assurance framework covering risk classification, eval standards, monitoring requirements, and compliance documentation templates. Production Gen AI Guardrails toolkit: centralised service covering hallucination detection, output filtering, safety layers, and bias monitoring. Data Science Lifecycle framework: unified responsible AI development standards across the organisation.',
+    impact: '£20M of value unlocked across GenAI implementations. DataIQ Best Responsible AI Program Award 2025. Novel fairness monitoring methodology (patent pending).',
   },
   {
-    id: 'ngo-strategy',
-    title: 'AI Strategy for Social Impact',
+    id: 'vida-ethical-ai',
+    title: 'Safety & Evaluation Framework for High-Stakes LLM Deployment',
+    org: 'herEthicalAI (Vida)',
+    sector: 'AI Safety',
+    service: 'Adversarial Eval · High-Stakes Deployment',
+    image: 'https://images.unsplash.com/photo-1573165349168-b66c8bc087fc?q=80&w=1169&auto=format&fit=crop&ixlib=rb-4.1.0',
+    teaser: 'Designing the eval harness and adversarial eval tooling for an LLM system deployed to police forces that detects victim-blaming language in court documents.',
+    challenge: 'Vida is an LLM-based system that detects victim-blaming language and coercive abuse patterns in court documents. It\'s deployed to police forces, financial regulators, and abuse survivors. A false negative — missing an instance of victim-blaming — has direct harm consequences for a real person in a vulnerable situation. Standard eval approaches are insufficient for this level of stakes.',
+    approach: 'Designed a safety and evaluation framework from first principles for a domain where the cost of failure is measured in harm to survivors. Red-teaming and adversarial eval tooling systematically surface false negatives before deployment. Calibration framework ensures confidence scores are meaningful to operators, not just technically correct.',
+    solution: 'Core safety and evaluation framework design. Red-teaming and adversarial eval tooling: systematic attempts to surface false negatives before deployment. Calibration framework: ensuring the system\'s confidence scores are meaningful and not misleading to operators. Failure mode taxonomy: classification of the ways the system can fail and what each means for a survivor, a police officer, a court.',
+    impact: 'In progress. Framework designed. Adversarial eval tooling in development.',
+  },
+  {
+    id: 'diverse-ai',
+    title: 'Participatory AI Evaluation Framework',
+    org: 'Diverse AI (UK NGO)',
     sector: 'Non-Profit',
-    service: 'Strategy & Roadmapping',
-    image: 'https://images.unsplash.com/photo-1573165349168-b66c8bc087fc?q=80&w=1169&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
-    teaser: 'Setting up the AI Research Program for a UK based NGO to help it directly leverage AI to achieve its mission of diversity and inclusion in Tech',
-    challenge: 'A UK based NGO wanted to use AI tooling to improve diversity in the field of Tech but needed clear technical direction in the viability of using AI as a tool itself.',
-    approach: 'Setting up a research program to directly allow people from marginalised communities to adopt a participatory approach to evaluating open source Gen AI, hence learning by doing.',
-    solution: 'A participatory evaluation framework and database that tests how performant open source Gen AI models and ChatGPT are to crowd-sourced use cases and everyday tasks.',
-    impact: 'The program was funded within the first year of its running. A research paper resulted and led on to a further Inclusive AI in Education initiative, firmly embedding AI in the operations of the NGO.',
+    service: 'AI Strategy · Participatory Governance',
+    image: 'https://images.unsplash.com/photo-1573165349168-b66c8bc087fc?q=80&w=1169&auto=format&fit=crop',
+    teaser: 'Built a participatory evaluation framework allowing communities from marginalised backgrounds to directly test open-source GenAI models — and published the methodology.',
+    challenge: 'A UK-based NGO focused on diversity in tech wanted to use AI tooling to amplify its mission — but needed to know whether open-source GenAI models actually served communities from marginalised backgrounds before deploying them. No off-the-shelf framework existed for participatory evaluation at scale.',
+    approach: 'Designed a research programme that flipped the usual evaluation dynamic: instead of researchers testing models, people from marginalised communities tested models on tasks that actually mattered to them. Crowd-sourced real-world tasks, not synthetic benchmarks.',
+    solution: 'Research programme allowing people from marginalised communities to directly evaluate open-source GenAI models through structured participatory methods. Participatory evaluation framework and database: testing GenAI model performance on crowd-sourced real-world tasks from diverse communities. Research methodology bridging technical AI evaluation with qualitative community feedback.',
+    impact: 'Programme funded within its first year of operation. Research published: "Bringing AI Participation Down to Scale," Patterns (Cell Press, 2025). Ongoing Inclusive AI in Education initiative.',
   },
   {
     id: 'public-sector-compliance',
-    title: 'EU AI Act Readiness',
+    title: 'EU AI Act Regulatory Sandbox Design',
+    org: 'EU Parliamentary Organisation',
     sector: 'Public Sector',
-    service: 'Regulatory Compliance',
+    service: 'Regulatory Compliance · Technical Standards',
     image: 'https://images.unsplash.com/photo-1555421689-d68471e189f2?w=800&auto=format&fit=crop&q=80',
-    teaser: 'Preparing a EU Parliamentary organisation to design standardisations for regulatory sandboxes to demonstrate EU AI Act compliance.',
-    challenge: 'An EU Parliamentary organisation needed to design a regulatory sandbox for AI applications that would fall under the jurisdiction of the EU AI Act.',
-    approach: 'Focusing on re-usable metrics, automated AI observability and monitoring, allowing human in the loop when necessary.',
-    solution: 'Building out a general AI observability and monitoring set of requirements as well as standard fairness and explainability metric reporting, tiered by the risk levels as decided by the EU AI Act classifications.',
-    impact: 'Regulatory Sandbox design integrated into the consultation results.',
+    teaser: 'Designed a technically implementable regulatory sandbox for AI applications under the EU AI Act — not a policy document, but a framework you could actually use.',
+    challenge: 'An EU Parliamentary organisation needed to design a regulatory sandbox for AI applications falling under the EU AI Act — not a policy document, but a technically implementable framework that could be used to demonstrate compliance and test AI systems in a controlled environment.',
+    approach: 'Focused on reusable metrics, automated AI observability and monitoring, and human-in-the-loop integration where required by the Act\'s risk classification. Tiered requirements by EU AI Act risk level (High / Limited / Minimal) to make compliance proportionate and practical.',
+    solution: 'General AI observability and monitoring requirements spec (reusable, automated). Standard fairness and explainability metric reporting framework, tiered by EU AI Act risk classification. Human-in-the-loop integration requirements for High-Risk AI systems. Regulatory sandbox design with measurable compliance checkpoints.',
+    impact: 'Regulatory sandbox design integrated into official consultation results.',
   },
   {
     id: 'automated-monitoring',
-    title: 'Automated monitoring for deployed AI systems',
-    sector: 'All',
-    service: 'Responsible AI Implementation',
+    title: 'Automated Fairness Monitoring for Public Sector AI',
+    org: 'Public Sector Technology Company',
+    sector: 'Responsible AI Implementation',
+    service: 'Fairness Monitoring · Technical Research',
     image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&auto=format&fit=crop&q=80',
-    teaser: 'Discovery and implementation of an automated fairness monitoring system that can detect changes in marginalised groups for public sector AI applications.',
-    challenge: 'A notable technology company that services the public sector in the UK was concerned that AI applications continue to discriminate against changing marginalised groups.',
-    approach: 'Take inspiration from a different field of AI and deep learning, re-formulate the current problem in that context to invent an innovative new automated monitoring protocol.',
-    solution: 'Use methods from the field of semi-supervised learning and apply it to AI safety to automatically track changes in social positions of groups assigned marginalised during AI application development.',
-    impact: 'Method implemented in the technology strategy of the public services technology team for further incorporation.',
+    teaser: 'Built a novel automated fairness monitoring protocol using semi-supervised learning to track changes in marginalised groups as social context evolves over time.',
+    challenge: 'A technology company serving UK public sector clients was concerned that their AI applications were continuing to discriminate against marginalised groups — particularly as the social definition of marginalised groups evolves over time. Static bias monitoring was insufficient because it couldn\'t adapt as society changes.',
+    approach: 'Looked outside the conventional fairness monitoring toolkit and found the solution in a different field of AI: semi-supervised learning. Re-formulated the problem in that context to design an automated monitoring protocol that doesn\'t require the definition of marginalised groups to be fixed at development time.',
+    solution: 'Novel automated fairness monitoring protocol drawing on semi-supervised learning methods applied to AI safety. System tracks changes in the social positions of groups identified as marginalised during AI application development — automatically adapting as social context shifts. Catches distributional drift in protected characteristics before it causes harm.',
+    impact: 'Method implemented in the technology strategy of the public services technology team for further incorporation and R&D.',
   },
 ];
 
-const sectors = ['All', 'Financial Services', 'Non-Profit', 'Public Sector', 'Healthcare'];
+const sectors = ['All', 'Financial Services', 'AI Safety', 'Non-Profit', 'Public Sector', 'Responsible AI Implementation'];
 ---
 
 <BaseLayout
   title="Case Studies"
-  description="Explore how Dr. Chandrima Ganguly has helped mission-driven organizations implement responsible AI — from governance frameworks to technical solutions."
+  description="Production AI safety systems, guardrails, and evals built by Chandrima Ganguly. Lloyds Banking Group, herEthicalAI, Diverse AI, EU Parliamentary organisations."
 >
   <!-- Hero Section -->
   <section class="section-padding bg-gradient-to-b from-warm-stone/50 to-soft-cream">
     <div class="container-wide mx-auto">
       <div class="max-w-3xl">
         <p class="text-terracotta text-sm tracking-widest uppercase mb-4">Case Studies</p>
-        <h1 class="mb-6">Intentional Innovation in Action</h1>
+        <h1 class="mb-6">What I've shipped.</h1>
         <p class="text-xl text-deep-earth/80 leading-relaxed">
-          Real stories of mission-driven organizations implementing AI responsibly —
-          navigating complexity while staying true to their values.
+          Production systems, not strategy decks. Here's what I've built, how I built it, and what happened.
         </p>
       </div>
     </div>
   </section>
 
-  <!-- Filter (visual only for now) -->
+  <!-- Filter (visual only) -->
   <section class="py-8 border-b border-warm-stone">
     <div class="container-wide mx-auto px-6 md:px-8">
       <div class="flex flex-wrap gap-3 justify-center">
@@ -125,9 +141,10 @@ const sectors = ['All', 'Financial Services', 'Non-Profit', 'Public Sector', 'He
                 </div>
 
                 <!-- Content -->
-                <h2 class="text-xl font-heading font-semibold text-forest-deep mb-3 leading-tight flex-shrink-0">
+                <h2 class="text-xl font-heading font-semibold text-forest-deep mb-1 leading-tight flex-shrink-0">
                   {study.title}
                 </h2>
+                <p class="text-sm text-sage mb-2 flex-shrink-0">{study.org}</p>
                 <p class="text-deep-earth/70 mb-3 text-base leading-snug flex-shrink-0">
                   {study.teaser}
                 </p>
@@ -135,7 +152,7 @@ const sectors = ['All', 'Financial Services', 'Non-Profit', 'Public Sector', 'He
                 <!-- Challenge preview -->
                 <div class="pt-3 border-t border-warm-stone flex-1 overflow-hidden pb-6">
                   <p class="text-base text-deep-earth/60 leading-snug line-clamp-4">
-                    <span class="font-semibold text-forest-deep">The Challenge:</span> {study.challenge}
+                    <span class="font-semibold text-forest-deep">The situation:</span> {study.challenge}
                   </p>
                 </div>
 
@@ -153,9 +170,10 @@ const sectors = ['All', 'Financial Services', 'Non-Profit', 'Public Sector', 'He
                 <div class="h-full flex flex-col">
                   <!-- Header -->
                   <div class="mb-4 flex-shrink-0">
-                    <h2 class="text-xl font-heading font-semibold text-soft-cream mb-3 leading-tight">
+                    <h2 class="text-xl font-heading font-semibold text-soft-cream mb-1 leading-tight">
                       {study.title}
                     </h2>
+                    <p class="text-sage text-sm mb-3">{study.org}</p>
                     <div class="flex flex-wrap gap-2">
                       <span class="text-sm bg-sage/30 text-soft-cream px-3 py-1 rounded-full">
                         {study.sector}
@@ -166,17 +184,12 @@ const sectors = ['All', 'Financial Services', 'Non-Profit', 'Public Sector', 'He
                   <!-- Content sections - scrollable -->
                   <div class="flex-1 overflow-y-auto space-y-3 pr-1 custom-scrollbar min-h-0 mb-1">
                     <div>
-                      <h3 class="text-sage text-sm tracking-wide uppercase mb-2 font-semibold">The Approach</h3>
-                      <p class="text-soft-cream/90 text-base leading-snug">{study.approach}</p>
-                    </div>
-
-                    <div>
-                      <h3 class="text-sage text-sm tracking-wide uppercase mb-2 font-semibold">The Solution</h3>
+                      <h3 class="text-sage text-sm tracking-wide uppercase mb-2 font-semibold">What I built</h3>
                       <p class="text-soft-cream/90 text-base leading-snug">{study.solution}</p>
                     </div>
 
                     <div class="bg-soft-cream/10 rounded-lg p-3 border border-soft-cream/20">
-                      <h3 class="text-morning-gold text-sm tracking-wide uppercase mb-2 font-semibold">The Impact</h3>
+                      <h3 class="text-morning-gold text-sm tracking-wide uppercase mb-2 font-semibold">The outcome</h3>
                       <p class="text-soft-cream text-base leading-snug font-medium">{study.impact}</p>
                     </div>
                   </div>
@@ -227,7 +240,6 @@ const sectors = ['All', 'Financial Services', 'Non-Profit', 'Public Sector', 'He
       transform: rotateY(180deg);
     }
 
-    /* Custom scrollbar for the back of cards */
     .custom-scrollbar::-webkit-scrollbar {
       width: 6px;
     }
@@ -248,7 +260,6 @@ const sectors = ['All', 'Financial Services', 'Non-Profit', 'Public Sector', 'He
   </style>
 
   <script>
-    // Add click handlers to flip cards
     document.addEventListener('DOMContentLoaded', () => {
       const flipCards = document.querySelectorAll('.flip-card');
 
@@ -260,70 +271,15 @@ const sectors = ['All', 'Financial Services', 'Non-Profit', 'Public Sector', 'He
     });
   </script>
 
-  <!-- Case Study Template Preview -->
-  <section class="section-padding bg-forest-deep text-soft-cream">
-    <div class="container-wide mx-auto">
-      <SectionHeader
-        label="The Format"
-        title="How I Share Case Studies"
-        subtitle="Each case study follows a narrative structure that captures the full journey"
-        light={true}
-      />
-
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mt-16">
-        <div class="text-center">
-          <div class="w-16 h-16 bg-terracotta/20 rounded-2xl flex items-center justify-center mx-auto mb-4">
-            <svg class="w-8 h-8 text-terracotta" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
-            </svg>
-          </div>
-          <h3 class="font-heading font-semibold text-soft-cream mb-2">The Challenge</h3>
-          <p class="text-soft-cream/70 text-sm">What the organization faced and why it mattered</p>
-        </div>
-
-        <div class="text-center">
-          <div class="w-16 h-16 bg-sage/20 rounded-2xl flex items-center justify-center mx-auto mb-4">
-            <svg class="w-8 h-8 text-sage" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01"/>
-            </svg>
-          </div>
-          <h3 class="font-heading font-semibold text-soft-cream mb-2">The Approach</h3>
-          <p class="text-soft-cream/70 text-sm">How we worked together to address it</p>
-        </div>
-
-        <div class="text-center">
-          <div class="w-16 h-16 bg-morning-gold/20 rounded-2xl flex items-center justify-center mx-auto mb-4">
-            <svg class="w-8 h-8 text-morning-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/>
-            </svg>
-          </div>
-          <h3 class="font-heading font-semibold text-soft-cream mb-2">The Solution</h3>
-          <p class="text-soft-cream/70 text-sm">What we built or implemented</p>
-        </div>
-
-        <div class="text-center">
-          <div class="w-16 h-16 bg-soft-cream/10 rounded-2xl flex items-center justify-center mx-auto mb-4">
-            <svg class="w-8 h-8 text-soft-cream" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"/>
-            </svg>
-          </div>
-          <h3 class="font-heading font-semibold text-soft-cream mb-2">The Impact</h3>
-          <p class="text-soft-cream/70 text-sm">Outcomes and lessons learned</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- CTA Section -->
+  <!-- Closing CTA -->
   <section class="section-padding">
     <div class="container-narrow mx-auto text-center">
-      <h2 class="mb-6">Let's Write Your Story</h2>
+      <h2 class="mb-6">Ready to be the next case study?</h2>
       <p class="text-xl text-deep-earth/80 mb-8 max-w-2xl mx-auto">
-        Every case study begins with a conversation. Let's explore how intentional
-        AI could transform your organization.
+        Every engagement starts with a 30-minute call. I'll tell you honestly whether I can help and what it would look like.
       </p>
       <a href={`${base}/contact`} class="btn-primary">
-        Start the Conversation
+        Book a call
       </a>
     </div>
   </section>
